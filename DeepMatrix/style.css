@@ -1,0 +1,357 @@
+/* style.css */
+body {
+    font-family: sans-serif; /* Choose a suitable font */
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Light background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: white; /* White header */
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out; /* Transition only color */
+    position: relative;
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #726982;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #726982;
+}
+
+nav a:hover:before {
+    transform: scaleX(1);
+}
+
+nav li {
+    margin: 0 10px; /* Added margin on both sides for spacing */
+}
+
+.mainLogo {
+    max-height: 50px; /* Set a maximum height */
+    width: 7vw;      /* Maintain aspect ratio */
+    display: block; /* Prevents extra space below image */
+}
+
+.try-demo {
+    background-color: #673ab7; /* Example purple */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.try-demo:hover {
+    background-color: rgb(53, 49, 49); /* Darker purple on hover */
+    color : #726982;
+    transform: scale(1.1);
+}
+
+
+.hero {
+    background: linear-gradient(to bottom, #e0e0e0, #f8f8f8); /* Example gradient */
+    padding: 100px 0;
+    text-align: center;
+    position: relative; /* For absolute positioning of images */
+    /* overflow: hidden; Hide overflowing images */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 60px 0;
+}
+
+.get-started {
+    background-color: #673ab7; /* Example purple */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.get-started:hover {
+    background-color: rgb(53, 49, 49); /* Darker purple on hover */
+    color : #726982;
+    transform: scale(1.1);
+}
+
+.hero-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allow clicking through */
+}
+
+.satellite {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 150px; /* Adjust size as needed */
+    opacity: 0.7;
+}
+
+.drone {
+    position: absolute;
+    bottom: 6%;
+    right: 11%;
+    width: 200px; /* Adjust size as needed */
+    opacity: 0.7;
+}
+
+.map{
+    position: absolute;
+    top: 105%;
+    right: 20%;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* second page */
+/* style.css */
+.about-us {
+    margin-top: 24vw;
+    padding: 80px 0; /* Adjust padding as needed */
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.about-us .container {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    justify-content: space-between; /* Distribute space between content and image */
+    align-items: center; /* Vertically align items */
+}
+
+.about-content {
+    flex: 1 1 50%; /* Takes up 50% of the container width, grows and shrinks */
+    padding-right: 40px; /* Add some spacing between text and image */
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.about-image {
+    flex: 1 1 40%;
+    /* Remove text-align: center; */
+    /* overflow: hidden; This is key for the "coming out" effect */
+    border-radius: 8px; /* Optional: If you want rounded corners on the overflowed part */
+    position: relative; /* Needed for absolute positioning of pseudo-element if needed */
+}
+
+.about-image img {
+    width: 132%; /* Make the image wider than its container */
+    height: auto;
+    display: block; /* Prevents extra space below image */
+    /* Position the image to control which part is visible */
+    position: relative;
+    left: -5%; /* Adjust this value to control how much it overflows */
+    top: -5%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-us .container {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .about-content {
+        padding-right: 0; /* Remove right padding */
+        margin-bottom: 30px; /* Add margin below text */
+    }
+    .about-image {
+      flex: 1 1 90%;
+    }
+}
+
+
+
+/* third page */
+
+/* style.css */
+.solutions {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.solution-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.solution-heading   { 
+    color: #673ab7;
+    font-size: 40px;
+    text-align: center;
+ }
+
+ .solution-para{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 25px;
+ }
+
+
+.solution-grid {
+    display: flex;
+    flex-direction: column; /* Stack solution items vertically */
+    gap: 60px; /* increased the gap between the solution items */
+}
+
+.solution-item {
+    display: flex; /* Make each item a flex container */
+    /* align-items: center; Vertically align content and image */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden; /* Important for consistent border-radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.solution-item:hover {
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.solution-content {
+    flex: 1; /* Takes up available space */
+    padding:50px 30px;;
+}
+
+.solution-content h3 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+.solution-content p {
+   font-size: 22px;
+}
+
+.solution-image {
+    flex: 1;
+    text-align: center; /* Center image within its container */
+    padding: 30px;
+}
+
+.solution-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    transition: all 0.7s ease-in-out;
+}
+
+.solution-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .solution-item {
+        flex-direction: column; /* Stack content and image vertically on smaller screens */
+        text-align: center;
+    }
+    .solution-content{
+      text-align: center;
+    }
+    .solution-content p {
+      text-align: left;
+    }
+    .solution-image {
+        padding: 20px;
+    }
+}
+
+/* fourth page */
+
+.solution-singleItem{
+    display: flex;
+}
+
+/* ourClients */
+
+/* style.css */
+.our-clients {
+    padding: 80px 0;
+    background-color: #f9f9f9; /* Or any other background color */
+    text-align: center; /* Center the content */
+}
+
+.our-clients h2 {
+    color: #673ab7;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.client-logos ,
+.partners-logos {
+    display: flex;
+    flex-wrap: wrap; /* Allow logos to wrap to the next line */
+    justify-content: center; /* Center logos horizontally */
+    align-items: center; /* Vertically align logos */
+    gap: 40px; /* Adjust spacing between logos */
+}
+
+.client-logos img ,
+.partners-logos img {
+    max-width: 150px; /* Adjust max width as needed */
+    max-height: 80px; /* Adjust max height as needed */
+    height: auto;
+    filter: grayscale(80%); /* optional grayscale */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
