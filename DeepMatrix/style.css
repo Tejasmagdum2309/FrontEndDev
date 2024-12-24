@@ -256,6 +256,7 @@ footer {
 .solution-item {
     display: flex; /* Make each item a flex container */
     /* align-items: center; Vertically align content and image */
+    flex-wrap: wrap;
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden; /* Important for consistent border-radius */
@@ -338,20 +339,83 @@ footer {
 }
 
 .client-logos ,
-.partners-logos {
+.partners-logos,.client-logos__3logos {
     display: flex;
     flex-wrap: wrap; /* Allow logos to wrap to the next line */
     justify-content: center; /* Center logos horizontally */
     align-items: center; /* Vertically align logos */
-    gap: 40px; /* Adjust spacing between logos */
+    gap: 80px; /* Adjust spacing between logos */
 }
 
 .client-logos img ,
-.partners-logos img {
+.partners-logos img,.client-logos__3logos img {
     max-width: 150px; /* Adjust max width as needed */
-    max-height: 80px; /* Adjust max height as needed */
+    max-height: 100px; /* Adjust max height as needed */
     height: auto;
     filter: grayscale(80%); /* optional grayscale */
     opacity: 0.7;
     transition: all 0.3s ease;
+}
+
+.client-logos__3logos {
+   margin: 70px 0 ; 
+   gap: 180px;
+}
+
+/* footer */
+
+footer {
+    background-color: #3f0071; /* Deep purple background */
+    color: white;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: flex-start; /* Align items to the top of the container */
+    max-width: 1200px; /* Optional: Set a maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+.footer-column {
+    flex: 1 1 250px; /* Distribute columns evenly, minimum width 250px */
+    margin-bottom: 20px; /* Add some spacing between columns */
+    min-width: 200px; /* prevent content from squishing too much */
+}
+.footer-column ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom{
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle divider */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px; /* Adjust icon size as needed */
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-column {
+        flex: 1 1 45%; /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-column {
+        flex: 1 1 100%; /* One column on very small screens */
+    }
 }
