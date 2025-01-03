@@ -10,8 +10,11 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -22,7 +25,7 @@
       <!-- Navbar -->
       <nav class="navbar">
         <div class="navbar_contents">
-          <div class="logo">gnani.ai</div>
+          <div class="logo"><img style="width: 8vw; " src="images/Gnani_Logo_Blue.png" alt=""></div>
           <ul class="nav_links">
             <li><a href="#">Products</a></li>
             <li><a href="#">Solutions</a></li>
@@ -31,13 +34,13 @@
             <li><a href="#">About Us</a></li>
             <li><a href="#">Resources</a></li>
           </ul>
-          <button class="btn">Reaquest Demo</button>
+          <button class="btn btn-request">Reaquest Demo</button>
         </div>
       </nav>
 
       <!-- hero -->
 
-      <section class="hero">
+      <section class="hero ">
         <div class="hero_content">
           <div class="hero_left">
             <h1 style="margin: 0">
@@ -57,7 +60,11 @@
 
       <!-- Customer Section -->
       <div class="container mx-auto p-2 mt-12">
-        <h2 class="text-center mb-10 text-5xl font-bold hover:underline transition duration-300">Our Customers</h2>
+        <h2
+          class="text-center mb-14 text-5xl font-bold hover:underline transition duration-300"
+        >
+          Our Customers
+        </h2>
         <div id="customerCarousel" class="carousel slide" data-bs-ride="false">
           <div class="carousel-inner">
             <!-- Slide 1 -->
@@ -133,9 +140,8 @@
         </div>
       </div>
 
-
-    <!-- stats -->
-      <div class="stats-container">
+      <!-- stats -->
+      <div class="stats-container hidden">
         <div class="stat-item">
           <span class="stat-number">10+</span>
           <span class="stat-text">Patents</span>
@@ -155,44 +161,48 @@
       </div>
       <div class="line"></div>
 
-
-
       <!-- customer exp -->
       <div class="customer-experience-section">
-        <h2 class="customer-experience-heading">Supercharge Your Customer <br>
-           Experience With Gnani AI-Platform</h2>
-        
-        <div class="feature-cards">
-          <div class="feature-card">
-           <img src="./images/1.png" alt="">
-          </div>
-          <div class="feature-card">
-            <img src="./images/2-1.png" alt="">
-          </div>
-          <div class="feature-card">
-            <img src="./images/3-1.png" alt="">
+        <h2 class="customer-experience-heading hidden">
+          Supercharge Your Customer <br />
+          Experience With Gnani AI-Platform
+        </h2>
 
+        <div class="feature-cards ">
+          <div class="feature-card hidden-side">
+            <img src="./images/1.png" alt="" />
           </div>
-          <div class="feature-card">
-            <img src="./images/4-1.png" alt="">
-
+          <div class="feature-card hidden-side">
+            <img src="./images/2-1.png" alt="" />
+          </div>
+          <div class="feature-card hidden-side">
+            <img src="./images/3-1.png" alt="" />
+          </div>
+          <div class="feature-card hidden-side">
+            <img src="./images/4-1.png" alt="" />
           </div>
         </div>
       </div>
 
       <!-- btn -->
 
-      <div class="cta-section">
+      <div class="cta-section hidden">
         <button class="cta-button">Contact Us</button>
-        <button class="cta-button">Download</button>
+        <button class="cta-button">Download Brochure</button>
       </div>
-      
+
       <!-- ai esction info -->
-      <section class="conversational-ai-section">
+      <section class="conversational-ai-section ">
         <h2 class="section-heading">Conversational AI in Action</h2>
-        <p class="section-subheading">Achieve Higher CX With Gnani's Conversational AI Suite of Products and Solutions.</p>
-        <ul class="features-list">
-          <li>Personalized and scalable Virtual Assistants available 24*7 across channels</li>
+        <p class="section-subheading">
+          Achieve Higher CX With Gnani's Conversational AI Suite of Products and
+          Solutions.
+        </p>
+        <ul class="features-list ">
+          <li>
+            Personalized and scalable Virtual Assistants available 24*7 across
+            channels
+          </li>
           <li>Deep Analytical Insights across all customer interactions</li>
           <li>Real-time Agent Assist for CX enhancement</li>
           <li>Multiple secure deployment options</li>
@@ -201,11 +211,14 @@
         </ul>
       </section>
 
-
       <!-- same one -->
-      
-      <div class="container mx-auto p-2 mt-12">
-        <h2 class="text-center mb-10 text-5xl font-bold hover:underline transition duration-300">Our Customers</h2>
+
+      <div class="container mx-auto p-2 ">
+        <h2
+          class="text-center mb-10 text-5xl font-bold hover:underline transition duration-300"
+        >
+        Recognitions
+        </h2>
         <div id="customerCarousel" class="carousel slide" data-bs-ride="false">
           <div class="carousel-inner">
             <!-- Slide 1 -->
@@ -284,44 +297,67 @@
       <!-- last section.. -->
 
       <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="logo.png" alt="Gnani Logo" class="footer-logo">
-                    <p class="copyright">Copyright 2022 Gnani Innovations Private Limited. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="footer-heading">Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Partnerships</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Explore API</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="footer-heading">Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Leadership</a></li>
-                        <li><a href="#">Investors</a></li>
-                        <li><a href="#">News & Updates</a></li>
-                        <li><a href="#">Legal</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="social-media-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+        <div class="footer-main hidden">
+          <img
+            src="./images/Gnani_Logo_Blue.png"
+            alt="Gnani Logo"
+            class="footer-logo"
+          />
+          <h2 style="font-size: 22px">Hello@gnani.ai</h2>
         </div>
-    </footer>
-      
+        
+        <div class="container hidden">
+          <div class="row">
+            <h5 class="footer-heading">resources</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Leadership</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">News & Updates</a></li>
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
 
-      
+          <div class="row">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Partnerships</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Integrations</a></li>
+              <li><a href="#">Explore API</a></li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <h5 class="footer-heading">Company</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Leadership</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">News & Updates</a></li>
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-socials hidden">
+          <h2 style="font-size: 20px; font-weight: 400; margin-bottom: 4px;">Follow Us</h2>
+          <div class="social-media-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+
+         </div> 
+
+        <p class="copyright ">Copyright 2022 Gnani Innovations Private Limited. All Rights Reserved.</p>
+
+      </footer>
     </div>
 
     <script
@@ -329,5 +365,12 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
+
+<!-- <div class="social-media-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div> -->
