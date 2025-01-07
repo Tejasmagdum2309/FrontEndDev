@@ -1,9 +1,9 @@
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+// menuToggle.addEventListener('click', () => {
+//     mobileMenu.classList.toggle('hidden');
+// });
 
 const playButtons = document.querySelectorAll('.playButton');
 const videoModal = document.getElementById('videoModal');
@@ -32,3 +32,5 @@ videoModal.addEventListener('click', (e) => {
         youtubePlayer.src = '';
     }
 });
+
+
