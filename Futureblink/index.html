@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FutureBlink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+    <style>
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+</style>
+
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontSize: {
+              "72px": "72px",
+              "48px": "48px",
+            },
+            colors: {
+              "custom-light-blue": "#faf7fe",
+              "custom-fante-white": "#ededed",
+            },
+            text: {
+              "48px": "48px",
+            },
+            width: {
+              "80vw": "90vw",
+            },
+            height: {
+              "60vh": "88vh",
+              "100vh": "100vh",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <nav
+      class="fixed z-50 top-6 left-1/2 transform -translate-x-1/2 w-[350px] md:w-[850px]  bg-white shadow-lg border-gray-300 border-2 rounded-full"
+    >
+      <div
+        class="container mx-auto px-0 md:px-2 md:py-3 py-2 flex justify-between items-center gap-6"
+      >
+        <a href="#" class="font-bold text-gray-800 ml-4"
+          ><img
+            src="./images/147c28c6-09fa-4aaf-8493-f6e98c1a6d17.webp"
+            class="w-20 md:w-32 h-auto md"
+            alt=""
+        /></a>
+
+        <ul class=" hidden md:block md:flex">
+          <a
+            href="#"
+            class="hover:text-white hover:bg-black transition-colors duration-300 rounded-3xl px-3 py-2"
+            >Contact Us</a
+          >
+           <a 
+          ><button
+            class="hidden md:block bg-custom-fante-white text-black rounded-full px-4 py-2 hover:bg-gray-800 hover:text-white transition-all duration-300"
+          >
+          Join FutureBlink
+        </button></a
+        >
+        </ul>
+
+       
+         <!-- {/* Hamburger menu for smaller screens */} -->
+         <button class="block md:hidden mr-3
+         " id="menu-toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+<!-- Mobile menu -->
+<div class="fixed h-[45vh] w-full top-0 left-[100] z-50 bg-gray-800" id="mobile-menu">
+  <div class="p-4 relative">
+    <!-- Close Button -->
+    <button
+      id="menu-close"
+      class="absolute z-[60] top-4 right-4 text-white focus:outline-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+
+    <!-- Menu Items -->
+    <a href="#" class="block p-2 text-white hover:text-gray-200">AI</a>
+    <a href="#" class="block p-2 text-white hover:text-gray-200">Portfolio</a>
+    <a href="#" class="block p-2 text-white hover:text-gray-200">Blog</a>
+    <a href="#" class="block p-2 text-white hover:text-gray-200">About</a>
+    <a href="#" class="block p-2 text-white hover:text-gray-200">Contact Us</a>
+ 
+    <a>
+      <button
+        class="block p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Join FutureBlink
+      </button>
+    </a>
+  </div>
+</div>
+
+
+<!-- hero section -->
+<div id="hero" class="relative h-[85vh] w-full flex items-center justify-center bg-[#303030]" >
+      <!-- Card Stack Container -->
+  <div class="relative">
+    <!-- Back Card 2 -->
+    <div class="absolute top-8 left-0 right-0 mx-auto w-[90vw] h-[55vh] md:w-[46vw] md:h-[55vh]  bg-gray-300 rounded-xl shadow-md brightness-50" ></div>
+    <!-- Back Card 1 -->
+    <div class="absolute top-4 left-0 right-0 mx-auto w-[92vw] h-[55vh] md:w-[48vw] md:h-[55vh] bg-gray-200 rounded-xl shadow-md brightness-75"  ></div>
+    <!-- Main Card -->
+    <div class="relative w-[94vw] h-[55vh] md:w-[50vw] md:h-[55vh] bg-white rounded-xl shadow-lg flex flex-col items-center justify-center px-6 md:px-8">
+      <!-- Section -->
+    <!-- Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 text-center">
+      Future Solutions to Help Businesses Grow
+    </h1>
+
+    <!-- Subheading -->
+    <p class="mt-4 text-lg md:text-xl text-gray-600 text-center max-w-3xl">
+      We are a global SaaS product & service company - helping B2B businesses grow.
+    </p>
+
+    <!-- Button -->
+    <button class="mt-6 bg-[#303030] text-white text-lg font-medium py-3 px-8 rounded-md shadow-lg hover:bg-blue-600 transition duration-300">
+      View Products
+    </button>
+    </div>
+  </div>
+</div>
+
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
