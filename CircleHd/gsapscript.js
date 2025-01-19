@@ -346,3 +346,24 @@ menu.addEventListener('click', () => {
     }
     
 });
+
+
+let body = document.querySelector('body');
+let cursor = document.querySelector('.cursor_circle');
+
+function isSmallDevice() {
+    return window.innerWidth <= 768; // Adjust 768px as per your requirement
+}
+
+
+body.addEventListener('mousemove', (dots) => {
+
+    if(isSmallDevice()){
+      return;
+    }
+    gsap.to(cursor, {
+        duration : 1,
+        x : dots.x,
+        y : dots.y
+    })
+})
