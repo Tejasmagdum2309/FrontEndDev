@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyksoft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+   
+    <style>
+      html,
+      body {    
+            
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+
+    </style>
+    
+  </head>
+<body >
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-10 bg-transparent transition-colors duration-300 ease-in-out">
+
+    <div
+      class="px-4 md:px-[50px] md:py-3 py-2 flex justify-between items-center"
+    >
+      <!-- Left side with Logo and Navbar links -->
+      <div class="flex items-center gap-6">
+        <!-- Logo -->
+        <a href="#" class="font-bold text-gray-800"
+          ><img
+            src="./images/logo.png"
+            class="w-20 md:w-32 h-auto"
+            alt="Logo"
+        /></a>
+
+        <!-- Navigation Links -->
+        <ul class="hidden md:flex gap-6">
+          <li><a href="#" class="hover:text-gray-700">Home</a></li>
+          <li><a href="#" class="hover:text-gray-700">Features</a></li>
+          <li><a href="#" class="hover:text-gray-700">Solution</a></li>
+          <li><a href="#" class="hover:text-gray-700">Integrations</a></li>
+          <li><a href="#" class="hover:text-gray-700">Pricing</a></li>
+          <li><a href="#" class="hover:text-gray-700">Contact Us</a></li>
+          <li><a href="#" class="hover:text-gray-700">Resources</a></li>
+        </ul>
+      </div>
+
+      <!-- Right side with Business text and Client button -->
+      <div class="flex items-center gap-4">
+        <a ><span class="text-gray-800 font-medium hidden md:block">Business</span></a>
+        <a ><button
+          class="hidden md:block bg-[#54459a] hover:bg-[#3a2f6e] text-white font-bold py-2 px-6 rounded-3xl transition-all duration-300 text-sm md:text-md"
+        >
+         For Client
+        </button></a>
+      </div>
+
+      <!-- Hamburger menu for smaller screens -->
+      <button class="block md:hidden mr-3 focus:outline-none" id="menu-toggle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div 
+    class="fixed h-[45vh] w-full top-0 left-0 z-60 bg-gray-800 z-20"
+    id="mobile-menu"
+  >
+    <div class="p-4 h-full flex flex-col justify-center gap-4">
+      <!-- Close Button -->
+      <button
+        id="menu-close"
+        class="absolute z-[60] top-4 right-4 text-white focus:outline-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <!-- Mobile Menu Items -->
+      <a href="#" class="block  text-white "
+        >Home</a
+      >
+      <a href="#" class="block  text-white "
+        >Features</a
+      >
+      <a href="#" class="block  text-white "
+        >Solution</a
+      >
+      <a href="#" class="block  text-white "
+        >Integrations</a
+      >
+      <a href="#" class="block text-white "
+        >Pricing</a
+      >
+      <a href="#" class="block  text-white "
+        >Contact Us</a
+      >
+      <a href="#" class="block  text-white "
+        >Resources</a
+      >
+      <div class="flex items-center space-x-6">
+        <!-- Business Text -->
+        <a href="#" class="block  text-white "
+        >Business</a
+      >
+      
+        <!-- Button -->
+          <span id="navbtn"><button  class="bg-[#54459a] hover:bg-[#3a2f6e] text-white font-bold py-2 px-6 rounded-3xl transition-all duration-300 text-sm md:text-md">
+            For Client
+          </button></span>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Hero section -->
+  <section id="hero" style="background:linear-gradient(to right, #f7f6f6 0   , #f8e3ea 50%, #c3bede 94%);
+" class="py-14 md:py-20 ">
+    <div class="container mx-auto px-4 flex flex-col justify-center items-center">
+      <h1 id="up" class="text-3xl md:text-5xl font-[60px] mb-4 text-center ">Your Intelligent Business <br>
+        Management <span class="text-[#54459a]">Solution</span> </h1>
+      <p id="up" class=" text-lg mb-6 text-center ">Whether your a solo service provider or managing a multi-employee enterprise, choose from our range <br>
+        of salon software packages meticulously crafted to enhance your reputation and fuel your business growth.</p>
+
+   
+        <span id="up" class="flex gap-4 mb-2 md:mb-0"> <button class="bg-[#54459a] text-white font-bold py-3 px-4 rounded-3xl "> Try a demo-its free</button>  <button class="border-[1px] border-[#54459a] text-[#54459a] font-bold py-3 px-4 rounded-3xl"> watch video </button></span>
+        <img id="up" class="w-[1000px] pt-6 md:pt-0" src="./images/herolap.png" alt="img">
+    </div>
+  </section>
+
+
+  <!-- Section 1 -->
+<section id="section-1" class="bg-white py-4 ">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-evenly items-center gap-8">
+      <!-- Section Left -->
+      <section class="md:w-[35%] space-y-8">
+        <h4 class="text-blue-500 text-lg font-medium tracking-wide uppercase">Who Are We</h4>
+  
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
+          Helping people discover the right salons and businesses.
+        </h2>
+  
+        <p class="text-gray-600 text-lg">
+          Flyksoft is a comprehensive business management software designed to help businesses streamline their appointments and improve efficiency.
+        </p>
+  
+        <!-- Card 1 -->
+        <div class="flex items-center bg-white  p-5 rounded-xl shadow-md px-2 pr-8 md:px-6 md:pr-16">
+          <div class="flex-shrink-0 mr-4">
+            <img class="h-12 w-12 " src="./images/group.png" alt="Card Logo 1">
+          </div>
+          <div>
+            <h5 class="text-xl font-semibold text-gray-800">User-Friendly</h5>
+            <p class="text-gray-600 text-sm">
+                User-friendly software makes tasks easier and
+                more intuitive for everyone.
+              </p>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="flex items-center bg-white  p-5 rounded-xl shadow-md px-2 pr-8 md:px-6 md:pr-16">
+          <div class="flex-shrink-0 mr-4">
+            <img class="h-12 w-12" src="./images/flexible.png" alt="Card Logo 2">
+          </div>
+          <div>
+            <h5 class="text-xl font-semibold text-gray-800">Customizable</h5>
+            <p class="text-gray-600 text-sm">  
+                Customizable software allows users to tailor features to
+                their specific needs and preferences.</p>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Section Right -->
+      <section class="md:w-1/2 flex justify-center">
+        <img class="w-full max-w-lg" src="./images/salon-img.png" alt="Salon Image">
+      </section>
+    </div>
+  </section>
+  
+<!-- Section 2 -->
+<section id="section-2" class="px-2 md:px-[60px] bg-gray-100 py-12">
+    <h4 class="text-center md:text-start text-lg font-medium text-gray-800">What Our Features Offer</h4>
+    <h2 class="text-center md:text-start text-3xl font-semibold text-gray-900 mb-8">List of Key Features</h2>
+  
+    <div class="flex flex-col md:flex-row gap-2">
+      <!-- Card 1 -->
+      <div id="card" class="w-full  md:w-1/4 p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative h-full ">
+          <!-- Circle -->
+          <div class="absolute top-[-25px] left-10 border-2 border-gray-300 transform -translate-x-1/2 h-12 w-12 bg-[#5546a0] rounded-full flex items-center justify-center text-white">
+           
+          </div>
+          <!-- Card Content -->
+          <h4 class="text-xl font-semibold text-gray-800 mt-4">Calendar & Scheduling</h4>
+          <p class="text-gray-600 mt-6">Our software features a robust calendar and scheduling system that helps you organize appointments and manage time effectively across all locations.</p>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div id="card" class="w-full  md:w-1/4 p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative h-full ">
+          <!-- Circle -->
+          <div class="absolute top-[-25px] left-10 border-2 border-gray-300 transform -translate-x-1/2 h-12 w-12 bg-[#eb5f8c] rounded-full flex items-center justify-center text-white">
+           
+          </div>
+          <!-- Card Content -->
+          <h4 class="text-xl font-semibold text-gray-800 mt-4">Multi Locations</h4>
+          <p class="text-gray-600 mt-6">
+            Our software allows you to easily register and manage multiple branches, streamlining operations across all locations.</p>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      
+   <div id="card" class="w-full  md:w-1/4 p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative h-full ">
+          <!-- Circle -->
+          <div class="absolute top-[-25px] left-10 border-2 border-gray-300 transform -translate-x-1/2 h-12 w-12 bg-[#ffc05b] rounded-full flex items-center justify-center text-white">
+           
+          </div>
+          <!-- Card Content -->
+          <h4 class="text-xl font-semibold text-gray-800 mt-4">Integrated Forms</h4>
+          <p class="text-gray-600 mt-6">
+            Our software includes integrated forms that simplify data collection and streamline client interactions, ensuring a seamless experience for both staff and customers.</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+     <div id="card" class="w-full  md:w-1/4 p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg relative h-full ">
+          <!-- Circle -->
+          <div class="absolute top-[-25px] left-10 border-2 border-gray-300 transform -translate-x-1/2 h-12 w-12 bg-[#00674b] rounded-full flex items-center justify-center text-white">
+           
+          </div>
+          <!-- Card Content -->
+          <h4 class="text-xl font-semibold text-gray-800 mt-4">Customer App</h4>
+          <p class="text-gray-600 mt-6">
+            Our customer app provides a user-friendly platform for clients to book appointments, manage their profiles, and receive updates, enhancing their overall experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Section 3 -->
+
+  <section id="section-3 mb-4" class="py-12">
+     <div class="flex flex-col justify-center items-center">
+        <p class="text-2xl font-semibold  mb-2">TENS OF CUSTOMERS</p>
+        <h3>Trust Us Around The Gcc​</h3>
+           <img class="w-[1000px]" src="./images/map.png" alt="">
+     </div>
+  </section>
+
+
+    <!-- Section 4 -->
+<section id="section-1" class="bg-white py-4 mb-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-evenly items-center gap-8">
+      <!-- Section Left -->
+      <section class="md:w-[45%] space-y-5">
+        <h4 class="text-gray-400 text-lg font-medium tracking-wide uppercase">Custom App</h4>
+  
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
+            Delivering a Perfect Experience for
+            your customers
+        </h2>
+  
+        <p class="text-gray-600 text-md">
+            We connect customers and businesses, allowing customers to easily book appointments. Businesses can track clients effortlessly, with all essential details conveniently organized in a single calendar through our technology.        </p>
+  
+      <div class="flex gap-6 mt-6 ">
+         
+        <img class="w-[200px]" src="./images/qr.png" alt="">
+
+        <span class=" flex justify-center items-center">        <img class="w-[200px] " src="./images/btn-d (1).png" alt="">
+</span>
+
+            
+   
+
+      </div>
+  
+    
+      </section>
+  
+      <!-- Section Right -->
+      <section class="md:w-1/2 flex justify-center">
+        <img class="w-[1000px] " src="./images/phone.png" alt="Salon Image">
+      </section>
+    </div>
+  </section>
+
+
+      <!-- Section 5 -->
+
+      <section id="section-5">
+            <div class="flex flex-col jstify-center items-center container mx-auto py-8 ">
+                <h4 class="text-xl text-[#9c60a0]  text-center mb-2">STILL HAVE QUESTION?
+                  
+                    </h4>
+                <h2 class="text-center text-4xl mb-2 font-medium mb-4">                    Talk To Our Experts
+</h2>
+                <p class="text-center text-lg">  Our experts will demonstrate the last mile delivery software and answer <br>
+                    your questions.</p>
+                <p class="text-center text-lg mb-4">Schedule a meeting with our experts to learn more about our last mile delivery software.</p>
+
+                <button          class="bg-[#54459a] hover:bg-[#3a2f6e] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 text-sm md:text-md"
+                >Set an online meeting</button>
+            </div>
+      </section>
+
+            <!-- footer -->
+
+  
+      <footer class="bg-[#5546a0] text-white py-10">
+        <div class=" px-4">
+          <!-- Footer Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <!-- About Section -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4"><img             class="w-20 md:w-32 h-auto"
+                src="./images/logo.png" alt=""></h4>
+              <p class="text-[12px] ">
+                Flyksoft is a comprehensive and integrated solution designed to streamline and optimize the operations of businesses in the wellness and beauty industry. This software caters to the specific needs of these businesses, allowing them to efficiently manage appointments, staff scheduling, client data, inventory, and various other aspects of their daily operations.
+              </p>
+
+              <div class="flex mt-2 gap-2 ">
+                     <img   class="w-7 md:w-19 h-auto" src="./images/social-insta.png" alt="">
+                     <img   class="w-7 md:w-19 h-auto" src="./images/social-facebook.png" alt="">
+
+                     <img   class="w-7 md:w-19 h-auto" src="./images/social-twitter.png" alt="">
+
+                     <img   class="w-7 md:w-19 h-auto" src="./images/social-whatsapp.png" alt="">
+
+                     <img   class="w-7 md:w-19 h-auto" src="./images/social-linkein.png" alt="">
+
+
+              </div>
+            </div>
+            
+            <!-- Quick Links Section -->
+            <div class="grid grid-cols-2 md:grid-cols-2  " >
+               <div><h4 class="text-lg font-semibold ">Quick Links</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-gray-300 transition">Get in touch</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Privacy Policy</a></li>
+              </ul></div>
+              
+              <div> <h4 class="text-lg font-semibold  mb-4">Solutions</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-gray-300 transition">Spa</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Salon</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Med Spa</a></li>
+              </ul></div>
+             
+            </div>
+            
+            <!-- Contact Info Section -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+              <p class="text-sm mb-2">1202, Al Fahidi Heights, Near Central Mall, Near Sharaf DG metro Station. Bur Dubai. Dubai. UAE.</p>
+              <p class="text-sm mb-2">+971552237236</p>
+              <p class="text-sm mb-2"><a href="mailto:info@flyksoft.com" class="hover:text-gray-300 transition">info@flyksoft.com</a></p>
+              <p class="text-sm"><a href="https://www.flyksoft.com" target="_blank" class="hover:text-gray-300 transition">www.flyksoft.com</a></p>
+            </div>
+            
+          </div>
+          
+          <!-- Footer Bottom -->
+          <div class="text-center mt-8 text-sm border-t border-gray-500 pt-4">
+            &copy; 2025 Flyksoft. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
+      
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="gsapscript.js"></script>
+  <script src="script.js"></script>
+</body>
