@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arihant Doors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", "Plus Jakarta Sans", sans-serif;
+      }
+
+       /* Hide default scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+      
+    </style>
+    <style>
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        background: #f2f2f2;
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+      .logos {
+        overflow: hidden;
+        padding: 60px 0;
+        background: white;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .logos:before,
+      .logos:after {
+        position: absolute;
+        top: 0;
+        width: 350px;
+        height: 100%;
+        content: "";
+        z-index: 2;
+      }
+
+      .logos:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+      }
+
+      .logos:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+      }
+
+      .logos:hover .logos-slide {
+        animation-play-state: paused;
+      }
+
+      .logos-slide {
+        display: inline-block;
+        animation: 25s slide infinite linear;
+      }
+
+      .logos-slide img {
+        height: 70px;
+        margin: 0 40px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#141c1f]">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 flex flex-col justify-center items-center bg-[#141c1f] text-white z-50">
+        <img src="./images/logo.png" alt="Loading..." class="w-1/2  animate-pulse opacity-80">
+    </div>
+
+    <nav
+      class="absolute z-50 top-0 left-1/2 transform -translate-x-1/2 w-full  bg-transparent shadow-lg  "
+    >
+      <div
+        class="container mx-auto px-2 md:px-1 md:py-3 py-2 flex justify-between items-center gap-6"
+      >
+        <a href="#">
+          <div class="flex items-center justify-center">
+            <h3 class="text-xl md:text-3xl font-semibold text-blue-500   text-orange-500">अरिहंत डोअर्स</h3>
+          </div>
+        </a>
+
+        <a><button 
+        onclick="window.location.href='https://wa.me/918551935032?text=%E0%A4%86%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%B2%E0%A4%BE%20%E0%A4%A6%E0%A4%B0%E0%A4%B5%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%82%E0%A4%9A%E0%A5%80%20%E0%A4%AE%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A4%B5%E0%A5%80%20%E0%A4%B9%E0%A5%8B%E0%A4%A4%E0%A5%80';" 
+        style="background-color: orange; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 8px; "
+        class="rounded-3xl px-3 py-2"
+        >
+        संपर्क करा
+      </button></a>
+        
+      
+      </div>
+    </nav>
+
+  
+    <!-- Hero Section -->
+    <div id="hero" class="bg-[url('./images/hero.jpg')] bg-cover bg-center w-full h-[65vh] md:h-[100vh]">
+    </div>
+    
+
+
+      <!-- About Section -->
+  <section id="about" class="py-6 px-4 md:py-[90px] bg-[#1b2529] pb-14">
+    <h2 class="text-5xl font-semibold text-center mb-10 md:mb-16 text-white">आमच्याबद्दल</h2>
+    <div id="about-content" class="text-gray-400 max-w-4xl mx-auto text-center text-white space-y-4 md:space-y-6">
+        <p>
+            आम्ही दरवाजे <span class="bg-orange-500 text-black px-1 rounded">जलद आणि कमी वेळेत</span> बसवण्याची उत्कृष्ट सेवा पुरवतो. आमचे काम <span class="bg-orange-500 text-black px-1 rounded">दर्जेदार</span> आणि ग्राहक समाधानावर आधारित आहे. दरवाज्यांचे <span class="bg-orange-500 text-black px-1 rounded">उत्कृष्ट डिझाईन्स</span> आम्ही उपलब्ध करून देतो आणि ग्राहक त्यांच्या आवडीनुसार डिझाईन्स PDF स्वरूपात सहज डाउनलोड करू शकतात.
+        </p>
+        <p>
+            सांगली शहरामध्ये आणि जवळपासच्या <span class="bg-orange-500 text-black px-1 rounded">12+ गावांमध्ये</span> आम्ही आमची सेवा दिली आहे. आमच्या <span class="bg-orange-500 text-black px-1 rounded">अनुभवी टीम</span> च्या मदतीने आम्ही काम <span class="bg-orange-500 text-black px-1 rounded">अचूक</span> आणि <span class="bg-orange-500 text-black px-1 rounded">वेगवान पद्धतीने</span> पूर्ण करतो. दरवाजे बसवण्यासाठी लागणारा वेळ कमी करणे हे आमचे ध्येय आहे.
+        </p>
+        <p>
+            आमच्याकडे <span class="bg-orange-500 text-black px-1 rounded">सागवान</span>, <span class="bg-orange-500 text-black px-1 rounded">राऊटर</span>, <span class="bg-orange-500 text-black px-1 rounded">लेमिनेशन</span>, <span class="bg-orange-500 text-black px-1 rounded">PVC</span>, आणि <span class="bg-orange-500 text-black px-1 rounded">WPVC</span> यासारख्या विविध प्रकारचे दरवाजे उपलब्ध आहेत. ग्राहकांना त्यांच्यासाठी योग्य दरवाज्यांचा पर्याय निवडण्याची पूर्ण सुविधा आम्ही देतो.
+        </p>
+        <p>
+            आमचे उद्दिष्ट केवळ दरवाजे बसवणे नाही, तर <span class="bg-orange-500 text-black px-1 rounded">आपल्या घराच्या सौंदर्यात भर</span> घालणे आहे. आमच्यावर विश्वास ठेवा, आणि आम्ही तुमचे <span class="bg-orange-500 text-black px-1 rounded">स्वप्न साकार</span> करू.
+        </p>
+    </div>
+    
+  </section>
+
+    <!-- Customer Reviews -->
+    <section id="customer" class="py-3 mb:py-10 bg-[#1b2529] pb-[60px]">
+        <h2  class="text-3xl font-bold text-center mb-6 text-white">ग्राहकांचे म्हणणे</h2>
+        <div  class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-4">
+          <div id="c" class="bg-gray-800 rounded-lg p-6">
+            <p class="text-gray-300 italic">"सेवा खूप उत्कृष्ट होती. वेळेवर काम पूर्ण झाले!"</p>
+            <p class="text-right text-gray-400 mt-2">
+              <span class="font-bold text-orange-500">किरण कुशिरे:</span> 99756 45479
+            </p>
+          </div>
+          <div id="c" class="bg-gray-800 rounded-lg p-6">
+            <p class="text-gray-300 italic">"दरवाज्यांची गुणवत्ता खूप चांगली आहे. शिफारस नक्की करेन."</p>
+            <p class="text-right text-gray-400 mt-2">
+              <span class="font-bold text-orange-500">तुषार लवटे:</span> +91 78754 60169
+            </p>
+          </div>
+          <div id="c" class="bg-gray-800 rounded-lg p-6">
+            <p class="text-gray-300 italic">"संघ खूप व्यावसायिक आहे. दरवाज्यांची डिझाईन खूप आकर्षक."</p>
+            <p class="text-right text-gray-400 mt-2">
+              <span class="font-bold text-orange-500">उदय पाटील:</span> +91 98231 99907
+            </p>
+          </div>
+        </div>
+      </section>
+
+  <!-- Types of Doors Section -->
+  <section id="types" class="py-10 bg-[#1b2529] ">
+    
+    <div class="max-w-4xl mx-auto px-4 text-gray-300 mb-4 md:mb-12">
+        <h2  class="text-4xl font-bold text-center md:text-start mb-12 md:mb-6 text-white">आमच्याकडे उपलब्ध दरवाज्यांचे प्रकार</h2>
+      <ul class="list-disc pl-6">
+        <li class="mb-2">सागवान दरवाजे (Sagwan Doors)</li>
+        <li class="mb-2">राऊटर दरवाजे (Router Doors)</li>
+        <li class="mb-2">लॅमिनेशन दरवाजे (Lamination Doors)</li>
+        <li class="mb-2">PVC दरवाजे</li>
+        <li class="mb-2">WPVC दरवाजे</li>
+      </ul>
+      <p class="mt-6 text-gray-400">आम्ही तुमच्या आवडीनुसार दरवाज्यांची डिझाईन्स देखील उपलब्ध करतो.</p>
+        <div id="btn" class="mt-4">
+            <a href="https://drive.google.com/drive/folders/1cxzrrujE8EC7APsGgUhmpaNRd9GWWXZR?usp=sharing" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+              डिझाईन्स PDF पहा
+            </a>
+          
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of Doors with Image Sliders -->
+  <section id="tp" class="py-2 md:py-10 bg-[#1b2529]">
+    <h2 class="text-3xl md:text-5xl font-bold text-center mt-4 md:mt-10 mb-10 text-white">उपलब्ध दरवाज्यांचे प्रकार</h2>
+
+        <!-- Door Type 1 -->
+  <div id="tp1" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <h3 class="text-2xl font-semibold text-white mb-4">राऊटर दरवाजे (Router Doors)</h3>
+    <div x-data="{ scrollPosition: 0 }" class="relative">
+      <!-- Slider Container -->
+      <div class="overflow-x-scroll flex gap-4 no-scrollbar" x-ref="slider" @scroll="scrollPosition = $el.scrollLeft">
+        <!-- Images -->
+        <template x-for="(image, index) in ['Router/1.png', 'Router/2.png', 'Router/3.png', 'Router/4.png' , 'Router/5.png', 'Router/6.png', 'Router/7.png']" :key="index">
+          <div class="flex-none w-64 lg:w-72">
+            <img :src="`./images/${image}`" alt="Router Door"
+                 class="w-full h-auto object-cover border-2 border-gray-600 rounded-lg" />
+          </div>
+        </template>
+      </div>
+      <!-- Slider Controls -->
+      <button @click="$refs.slider.scrollBy({ left: -300, behavior: 'smooth' })"
+              class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+        ❮
+      </button>
+      <button @click="$refs.slider.scrollBy({ left: 300, behavior: 'smooth' })"
+              class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+        ❯
+      </button>
+    </div>
+  </div>
+
+     <!-- Door Type 2 -->
+     <div id="tp2" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <h3 class="text-2xl font-semibold text-white mb-4">सागवान दरवाजे (Sagwan Doors)</h3>
+        <div x-data="{ scrollPosition: 0 }" class="relative">
+          <!-- Slider Container -->
+          <div class="overflow-x-scroll flex gap-4 no-scrollbar" x-ref="slider" @scroll="scrollPosition = $el.scrollLeft">
+            <!-- Images -->
+            <template x-for="(image, index) in ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg' , '5.jpeg', '6.jpeg', '7.jpeg']" :key="index">
+              <div class="flex-none w-64 lg:w-72">
+                <img :src="`./images/sagwan/${image}`" alt="Router Door"
+                     class="w-full h-auto object-cover border-2 border-gray-600 rounded-lg" />
+              </div>
+            </template>
+          </div>
+          <!-- Slider Controls -->
+          <button @click="$refs.slider.scrollBy({ left: -300, behavior: 'smooth' })"
+                  class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+            ❮
+          </button>
+          <button @click="$refs.slider.scrollBy({ left: 300, behavior: 'smooth' })"
+                  class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+            ❯
+          </button>
+        </div>
+      </div>
+
+     
+      <!-- Door Type 2 -->
+     <div id="tp3" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <h3 class="text-2xl font-semibold text-white mb-4"> PVC दरवाजे (PVC Doors) </h3>
+        <div x-data="{ scrollPosition: 0 }" class="relative">
+          <!-- Slider Container -->
+          <div class="overflow-x-scroll flex gap-4 no-scrollbar" x-ref="slider" @scroll="scrollPosition = $el.scrollLeft">
+            <!-- Images -->
+            <template x-for="(image, index) in ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg' ]" :key="index">
+              <div class="flex-none w-64 lg:w-72">
+                <img :src="`./images/PVC/${image}`" alt="Router Door"
+                     class="w-full h-auto object-cover border-2 border-gray-600 rounded-lg" />
+              </div>
+            </template>
+          </div>
+          <!-- Slider Controls -->
+          <button @click="$refs.slider.scrollBy({ left: -300, behavior: 'smooth' })"
+                  class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+            ❮
+          </button>
+          <button @click="$refs.slider.scrollBy({ left: 300, behavior: 'smooth' })"
+                  class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+            ❯
+          </button>
+        </div>
+      </div>
+    
+
+          <!-- Door Type  -->
+     <div id="tp4" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <h3 class="text-2xl font-semibold text-white mb-4"> दरवाज्यांची विस्तृत श्रेणी (Wide Range of Doors) </h3>
+        <div x-data="{ scrollPosition: 0 }" class="relative">
+          <!-- Slider Container -->
+          <div class="overflow-x-scroll flex gap-4 no-scrollbar" x-ref="slider" @scroll="scrollPosition = $el.scrollLeft">
+            <!-- Images -->
+            <template x-for="(image, index) in ['swa/1.jpeg', 'swa/2.jpeg', 'single/1.jpg', 'single/2.jpg','single/3.jpg','single/4.jpg','single/5.jpg','single/6.jpg','single/7.jpg','single/8.jpg' ]" :key="index">
+              <div class="flex-none w-64 lg:w-72">
+                <img :src="`./images/${image}`" alt="Router Door"
+                     class="w-full h-auto object-cover border-2 border-gray-600 rounded-lg" />
+              </div>
+            </template>
+          </div>
+          <!-- Slider Controls -->
+          <button @click="$refs.slider.scrollBy({ left: -300, behavior: 'smooth' })"
+                  class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+            ❮
+          </button>
+          <button @click="$refs.slider.scrollBy({ left: 300, behavior: 'smooth' })"
+                  class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-2 rounded-full">
+            ❯
+          </button>
+        </div>
+      </div>
+
+    <!-- Repeat similar sections for Lamination, PVC, and WPVC doors -->
+  </section>
+
+
+  
+
+  <!-- Contact Section -->
+  <section class="py-10 px-4">
+    <h2 id="last" class="text-3xl font-bold text-center mb-6 text-white">आमच्याशी संपर्क साधा</h2>
+    <div  class="max-w-4xl mx-auto text-center">
+      <p id="last" class="text-gray-300 mb-2">📞 <span class="font-bold">+91 8551935032</span></p>
+      <p id="last" class="text-gray-300 mb-6">📍 सांगली, महाराष्ट्र </p>
+
+   
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6  text-center">
+    <p id="last" class="text-gray-400">&copy; 2025 अरिहंत डोअर्स. सर्व हक्क राखीव.</p>
+  </footer>
+  
+
+  <script>
+    window.addEventListener("load", function () {
+        setTimeout(function () {
+                  document.getElementById("loading-screen").classList.add("hidden");
+
+        },3000)
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
