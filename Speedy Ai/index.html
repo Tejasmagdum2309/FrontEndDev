@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speedy Ai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+      @keyframes sliderev {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+
+      .logos {
+        overflow: hidden;
+        padding: 30px 0;
+        background: white;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .logos:before,
+      .logos:after {
+        position: absolute;
+        top: 0;
+        width: 350px;
+        height: 100%;
+        content: "";
+        z-index: 2;
+      }
+
+      .logos:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+      }
+
+      .logos:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+      }
+
+      .logos:hover .logos-slide {
+        animation-play-state: paused;
+      }
+
+      .logos:hover .logos-slide-reverse {
+        animation-play-state: paused;
+      }
+
+      .logos-slide {
+        display: inline-block;
+        animation: 25s slide infinite linear;
+      }
+
+      .logos-slide-reverse {
+        display: inline-block;
+        animation: 25s sliderev infinite linear;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-10 bg-transparent transition-colors duration-300 ease-in-out"
+    >
+      <div
+        class="px-6 md:px-4 max-w-screen-xl mx-auto md:pt-8 md:pb-4 py-4 md:py-2 flex items-center text-sm"
+      >
+        <!-- Left Section (Logo) -->
+        <div class="flex-1 flex justify-start">
+          <a href="#" class="font-bold text-gray-800">
+            <img
+              src="./images/sidebar-logo.svg"
+              class="w-8 md:w-8 h-auto"
+              alt="Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Centered Navigation Links -->
+        <div class="flex-1 flex justify-center">
+          <ul class="hidden md:flex text-nowrap gap-6">
+            <li><a href="#" class="hover:text-gray-700">Pricing</a></li>
+            <li><a href="#" class="hover:text-gray-700">Website Audit</a></li>
+            <li><a href="#" class="hover:text-gray-700">Learn</a></li>
+            <li>
+              <a href="#" class="hover:text-gray-700">AI For Enterprise</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Section (Login & Button) -->
+        <div class="flex-1 flex justify-end items-center min-w-[150px] gap-4">
+          <a
+            ><span
+              class="text-gray-800 font-medium hidden md:block hover:cursor-pointer"
+              >Login</span
+            ></a
+          >
+          <a>
+            <button
+              class="hidden md:block bg-[#f54f20] hover:opacity-90 text-white font-family py-2 px-6 rounded-md transition-all duration-300 text-sm md:text-md"
+            >
+              <p class="text-sm text-nowrap">Book a meeting</p>
+            </button>
+          </a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <button
+          class="block md:hidden mr-3 focus:outline-none"
+          id="menu-toggle"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div
+    class="fixed h-[55vh] w-full top-0 left-0 z-50 bg-gray-800"
+    id="mobile-menu"
+  >
+    <div class="p-4 h-full flex flex-col items-center justify-between gap-2 relative">
+      <!-- Close Button -->
+      <button
+        id="menu-close"
+        class="absolute top-4 right-4 text-white focus:outline-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+  
+      <!-- Mobile Menu Items -->
+      <a href="#" class="block text-white">Pricing</a>
+      <a href="#" class="block text-white">Website Audit</a>
+      <a href="#" class="block text-white">Learn</a>
+      <a href="#" class="block text-white">AI For Enterprise</a>
+  
+      <!-- Button for Booking Meeting -->
+      <a href="#" class="block text-white"> <p class="bg-[#f54f20] px-5 py-2 rounded-md cursor-pointer">Book a meeting</p>  </a>
+      
+     
+
+    </div>
+  </div>
+  
+  
+    <!-- Hero section -->
+
+    <section id="hero" class="mt-[110px] md:mt-[150px]">
+      <div class="flex flex-col items-center gap-6 md:gap-4">
+        <p id="t1"
+          class="flex items-center gap-2 border-[1.2px] border-[#848684] text-center px-3 py-1 rounded-3xl text-[#c4c5c4] text-sm"
+        >
+          Backed by
+          <span
+            class="hover:cursor-pointer hover:text-black transition-all duration-300 flex items-center gap-2"
+          >
+            <img
+              src="./images/yc-logo.svg"
+              class="w-5 md:w-5 h-auto"
+              alt="Logo"
+            />
+            Combinator &
+          </span>
+
+          <span
+            class="hover:cursor-pointer hover:text-black transition-all duration-300 flex items-center gap-2"
+          >
+            <img
+              src="./images/google-logo.svg"
+              class="w-5 md:w-5 h-auto"
+              alt="Logo"
+            />Ventures
+          </span>
+        </p>
+
+        <h2 id="t1" class="text-3xl md:text-6xl font-bold text-center text-black">
+          AI Powered SEO
+        </h2>
+
+        <p id="t1" class="text-[#848684] text-center">
+          You don't need to be an
+          <span class="font-semibold text-black">SEO expert</span> to rank
+          higher and get more traffic. <br />
+
+          Create blogs, socials and ads with a custom ChatGPT for your business.
+        </p>
+        <span id="t1"><button 
+          class="hidden md:block bg-[#f54f20] hover:opacity-90 hover:-translate-y-1 hover:shadow-xl text-white font-family py-4 px-[120px] rounded-lg transition-all duration-300 text-sm md:text-md"
+        >
+          <p class="text-sm text-nowrap">Get Started Now</p>
+        </button></span>
+        <p id="t1" class="text-exptrasmall text-[#848684]">
+          3-days free trial <i class="ri-bard-line px-1"></i> No credit card
+          required
+        </p>
+
+        <div id="t1" class="max-w-screen-lg mx-auto pt-8 md:pt-2">
+          <img src="./images/hero.webp" class="w-full h-full" alt="heroimg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+
+    <section id="features" class="mt-20  md:mt-14">
+      <div class="flex flex-col items-center gap-4">
+        <p id="t2"
+          class="text-center text-[#fe6944] px-3 py-1 rounded-3xl text-[#c4c5c4] bg-[#fff8f6] text-sm"
+        >
+          Features
+        </p>
+        <h2 id="t2" class="text-3xl md:text-4xl font-bold text-center text-black">
+          Most Advanced AI SEO Tool
+        </h2>
+        <p id="t2" class="text-center text-[#848684]">
+          Speedy is the complete AI powered SEO tool your business needs. From
+          strategy to <br />analytics, it has everything to create engaging
+          content that ranks and bring your <br />
+          business more organic traffic!
+        </p>
+
+        <div
+          id="feature-cards"
+          class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 px-4"
+        >
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-lightbulb-flash-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Topic Recommendations</h3>
+            <p class="text-sm text-[#848684]">
+              Discover topics your audience craves.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-search-eye-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Competitor Analysis</h3>
+            <p class="text-sm text-[#848684]">
+              Uncover competitor secrets for better rankings.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-bar-chart-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Trends Tracking</h3>
+            <p class="text-sm text-[#848684]">
+              Stay ahead with the latest niche trends.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-quill-pen-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Blog Creation</h3>
+            <p class="text-sm text-[#848684]">Write quality blogs instantly.</p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-image-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">AI Image Generation</h3>
+            <p class="text-sm text-[#848684]">
+              Get unique visuals for your content.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-share-forward-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">
+              Social Media Generation
+            </h3>
+            <p class="text-sm text-[#848684]">
+              Craft engaging posts for FB, Insta, LinkedIn, and X (Twitter).
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-bar-chart-2-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">SEO Analytics & Audit</h3>
+            <p class="text-sm text-[#848684]">
+              Track SEO wins, areas to improve, and overall site health.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-links-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Internal Linking</h3>
+            <p class="text-sm text-[#848684]">
+              Optimize site structure for better SEO.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-global-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Blogs in 49 Languages</h3>
+            <p class="text-sm text-[#848684]">
+              Instantly creates SEO-optimized blogs in multiple languages.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-google-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Google Ads</h3>
+            <p class="text-sm text-[#848684]">
+              Create high-converting Google Ads effortlessly.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-links-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">
+              Backlink Recommendations
+            </h3>
+            <p class="text-sm text-[#848684]">
+              Build authority with quality backlinks.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start gap-3 p-4">
+            <i class="ri-key-line text-3xl text-[#f54f20]"></i>
+            <h3 class="text-lg font-bold text-black">Keyword Research</h3>
+            <p class="text-sm text-[#848684]">
+              Find the right keywords to target for higher rankings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action section -->
+
+    <section id="action" class="mt-20">
+      <div class="flex flex-col items-center gap-4">
+        <p
+          class="text-center text-[#fe6944] px-3 py-1 rounded-3xl text-[#c4c5c4] bg-[#fff8f6] text-sm"
+        >
+          Action
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-black">
+          See Speedy in action
+        </h2>
+        <p class="text-center text-[#848684]">
+          Watch how Speedy can help you generate high-quality, personalized,
+          SEO-optimized <br />blogs and social media content in your brand tone,
+          in seconds
+        </p>
+
+        <div
+          class="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2 md:px-0"
+        >
+          <!-- Blog Generation Card -->
+          <div
+            id="1"
+            class="group flex flex-col rounded-md bg-[#fff8f6] items-start text-start p-6 px-2 cursor-pointer transition-all duration-300"
+            onclick="changeVideo('images/topic-generation.mp4', this)"
+          >
+            <i
+              class="ri-article-line text-4xl text-[#f54f20] mb-3 group-hover:bg-[#fe5829] group-hover:text-white rounded-md transition-all duration-300"
+            ></i>
+            <h3 class="text-lg font-bold text-black">Blog Generation</h3>
+            <p class="text-sm text-[#848684]">
+              Generate high-quality, personalized, SEO-optimized blogs in
+              seconds
+            </p>
+          </div>
+
+          <!-- Google Ads Card -->
+          <div
+            id="2"
+            class="group rounded-md flex flex-col items-start text-start p-6 px-2 cursor-pointer transition-all duration-300"
+            onclick="changeVideo('images/google-ads.mp4', this)"
+          >
+            <i
+              class="ri-google-line text-4xl text-[#f54f20] mb-3 group-hover:bg-[#fe5829] group-hover:text-white rounded-md transition-all duration-300"
+            ></i>
+            <h3 class="text-lg font-bold text-black">Google Ads</h3>
+            <p class="text-sm text-[#848684]">
+              Create high-quality, personalized, SEO-optimized Google Ads in
+              seconds
+            </p>
+          </div>
+
+          <!-- Keyword Research Card -->
+          <div
+            id="3"
+            class="group rounded-md flex flex-col items-start text-start p-6 px-2 cursor-pointer transition-all duration-300"
+            onclick="changeVideo('images/keyword-research.mp4', this)"
+          >
+            <i
+              class="ri-search-line text-4xl text-[#f54f20] mb-3 group-hover:bg-[#fe5829] group-hover:text-white rounded-md transition-all duration-300"
+            ></i>
+            <h3 class="text-lg font-bold text-black">Keyword Research</h3>
+            <p class="text-sm text-[#848684]">
+              Generate keywords that rank and bring your business more organic
+              traffic!
+            </p>
+          </div>
+        </div>
+
+        <!-- Video Section -->
+        <div
+          id="vid"
+          class="max-w-screen-lg mx-auto mt-6 border border-[#dee2e6] rounded-lg overflow-hidden bg-white"
+        >
+          <video
+            id="videoPlayer"
+            src="./images/topic-generation.mp4"
+            autoplay
+            loop
+            muted
+            class="w-full rounded-lg object-cover"
+          ></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration section -->
+
+    <section id="integration" class="mt-[130px] md:mt-[150px]">
+      <div class="flex flex-col items-center gap-4">
+        <p
+          class="text-center text-[#fe6944] px-3 py-1 rounded-3xl text-[#c4c5c4] bg-[#fff8f6] text-sm"
+        >
+          Integrations
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-black">
+          Integrate with your favorite platforms
+        </h2>
+        <p class="text-center text-[#848684]">
+          Connect your social media accounts and post your content <br />to
+          multiple platforms with ease.
+        </p>
+      </div>
+      <div class="max-w-screen-lg mx-auto">
+        <div class="logos">
+          <div class="logos-slide flex flex-nowrap gap-4">
+            <!-- Zapier Card -->
+            <div
+              class="min-w-[325px] rounded-md rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-zap-line text-3xl text-[#f54f20]"></i>
+              <h3 class="text-lg font-bold text-black">Zapier</h3>
+              <p class="text-sm text-[#848684]">Post your blog using Zapier</p>
+            </div>
+
+            <!-- WordPress Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-wordpress-line text-3xl text-[#f54f20]"></i>
+              <h3 class="text-lg font-bold text-black">WordPress</h3>
+              <p class="text-sm text-[#848684]">Post your blog on WordPress</p>
+            </div>
+
+            <!-- Webflow Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-global-line text-3xl text-[#f54f20]"></i>
+              <h3 class="text-lg font-bold text-black">Webflow</h3>
+              <p class="text-sm text-[#848684]">Post your blog on Webflow</p>
+            </div>
+
+            <!-- Shopify Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-store-line text-3xl text-[#f54f20]"></i>
+              <h3 class="text-lg font-bold text-black">Shopify</h3>
+              <p class="text-sm text-[#848684]">Post your blog on Shopify</p>
+            </div>
+
+            <!-- Google Search Console Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-search-line text-3xl text-[#f54f20]"></i>
+              <h3 class="text-lg font-bold text-black">
+                Google Search Console
+              </h3>
+              <p class="text-sm text-[#848684]">
+                Get insights from Google Search Console
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="logos">
+          <div class="logos-slide-reverse flex flex-nowrap gap-4">
+            <!-- Facebook Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-facebook-circle-line text-3xl text-[#1877F2]"></i>
+              <h3 class="text-lg font-bold text-black">Facebook</h3>
+              <p class="text-sm text-[#848684]">
+                Post your content to Facebook
+              </p>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-linkedin-box-line text-3xl text-[#0077B5]"></i>
+              <h3 class="text-lg font-bold text-black">LinkedIn</h3>
+              <p class="text-sm text-[#848684]">
+                Post your content to LinkedIn
+              </p>
+            </div>
+
+            <!-- Twitter (X) Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-twitter-x-line text-3xl text-black"></i>
+              <h3 class="text-lg font-bold text-black">Twitter (X)</h3>
+              <p class="text-sm text-[#848684]">Post your content to Twitter</p>
+            </div>
+
+            <!-- Instagram Card -->
+            <div
+              class="min-w-[325px] rounded-md border border-[#eef0f2] flex flex-col items-start gap-3 p-4"
+            >
+              <i class="ri-instagram-line text-3xl text-[#E4405F]"></i>
+              <h3 class="text-lg font-bold text-black">Instagram</h3>
+              <p class="text-sm text-[#848684]">
+                Post your content to Instagram
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- case section -->
+
+    <section id="case" class="mt-14">
+      <div class="flex flex-col items-center gap-4">
+        <p id="t3"
+          class="text-center text-[#fe6944] px-3 py-1 rounded-3xl text-[#c4c5c4] bg-[#fff8f6] text-sm"
+        >
+          Case Studies
+        </p>
+        <h2 id="t3" class="text-3xl md:text-4xl font-bold text-center text-black">
+          Get 300% more traffic with Speedy
+        </h2>
+        <p id="t3" class="text-center text-[#848684]">
+          Our customers have seen a 300% increase in traffic after using Speedy.
+          We <br />
+          have helped them grow their online presence and increase their
+          revenue.
+        </p>
+        <div id="t4"
+          class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6 mt-6 px-4 py-20 bg-[#fafafa] rounded-md"
+        >
+          <!-- Image Section -->
+          <div class="flex-1 w-full md:w-1/4 flex items-center justify-center">
+            <img
+              class="w-3/4 h-auto rounded-md"
+              src="./images/case-studies.webp"
+              alt="Case Study"
+            />
+          </div>
+
+          <!-- Text Content Section -->
+          <div class="flex-1 w-3/4">
+            <span class="flex gap-2"
+              ><img
+                src="./images/brian.webp"
+                class="w-12 h-12 rounded-full"
+                alt=""
+              />
+              <span class=""
+                ><h3 class="text-2xl font-bold text-black">Brian</h3>
+                <h4 class="text-sm text-gray-400">AI For Beginners</h4>
+              </span></span
+            >
+
+            <p class="text-2xl font-bold text-gray-800">
+              Within two weeks, AI For Beginners generated 5.8k impressions with
+              Speedy, showcasing the power of AI-powered SEO in content creation
+              and improving SEO results.
+            </p>
+            <a href="#" class="text-[#f54f20] font-semibold hover:underline"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- test section -->
+
+    <section id="testomonials" class="mt-20">
+      <div class="flex flex-col items-center gap-4">
+        <p
+          class="text-center text-[#fe6944] px-3 py-1 rounded-3xl text-[#c4c5c4] bg-[#fff8f6] text-sm"
+        >
+          Testimonials
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-black">
+          What Our Customers Are Saying
+        </h2>
+        <p class="text-center text-[#848684]">
+          Speedy has helped thousands of businesses grow their online presence.
+          <br />
+          Here's what they have to say about our product.
+        </p>
+
+        <div
+          class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 px-4"
+        >
+          <div
+            class="bg-[#f7f7f7] flex flex-col justify-between space-y-6 p-8 rounded-md"
+          >
+            <p class="text-md font-medium text-gray-400">
+              “With the help of Speedy we have increased our web presence
+              through blogs with amazing quality. It has freed up hours for my
+              employees and allows them to focus on our core business.
+            </p>
+            <span class="flex items-center gap-2"
+              ><img
+                src="./images/BernardBirnbaum.webp"
+                class="w-8 h-8 rounded-full"
+                alt=""
+              />
+              <span class=""
+                ><h3 class="text-xl font-semibold text-black">
+                  Bernard Birnbaum
+                </h3>
+                <h4 class="text-sm text-gray-400">
+                  President, Birnbaum Companies
+                </h4>
+              </span></span
+            >
+          </div>
+
+          <div
+            class="bg-[#f7f7f7] flex flex-col justify-between space-y-6 p-8 rounded-md"
+          >
+            <p class="text-md font-medium text-gray-400">
+              “The SEO tool you didn't know you needed that will solve ALL of
+              your SEO problems. Seeing is believing! You owe it to yourself and
+              your business to give this SEO tool a try.”
+            </p>
+            <span class="flex items-center gap-2"
+              ><img
+                src="./images/rob-carliner.webp"
+                class="w-8 h-8 rounded-full"
+                alt=""
+              />
+              <span class=""
+                ><h3 class="text-xl font-semibold text-black">Rob Carliner</h3>
+                <h4 class="text-sm text-gray-400">
+                  Rob Carliner COO, Angela Caglia
+                </h4>
+              </span></span
+            >
+          </div>
+
+          <div
+            class="bg-[#f7f7f7] flex flex-col justify-between space-y-6 p-8 rounded-md"
+          >
+            <p class="text-md font-medium text-gray-400">
+              “I opted in to this App and its really exceeded my expectation on
+              the time saving front as well as customer support. Great team
+              behind - really helpful!”
+            </p>
+            <span class="flex items-center gap-2"
+              ><img
+                src="./images/annabel.webp"
+                class="w-8 h-8 rounded-full"
+                alt=""
+              />
+              <span class=""
+                ><h3 class="text-xl font-semibold text-black">
+                  Annabel Kalmar
+                </h3>
+                <h4 class="text-sm text-gray-400">Founder, Tea Rebellion</h4>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-10 mt-6 py-6 px-4"
+        >
+          <!-- Logos with black and white styling, centered images and uniform size -->
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/1.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 1"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/2.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 2"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/3.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 3"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/4.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 4"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/5.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 5"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/6.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 6"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/7.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 7"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/8.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 8"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/9.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 9"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/10.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 10"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/11.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 11"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/12.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 12"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/13.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 13"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="./images/14.webp"
+              class="w-[110px] grayscale hover:grayscale-0 transition-all duration-300"
+              alt="Logo 14"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- last -->
+
+    <section id="last" class="mt-[120px]">
+      <div
+        class="max-w-screen-lg mx-auto rounded-md bg-[#f7f7f7] flex flex-col items-center gap-4 pt-10"
+      >
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-black">
+          Start using Speedy today
+        </h2>
+        <p class="text-center text-[#848684]">
+          Start creating high-quality, personalized, SEO-optimized blogs and
+          social <br />
+          media content in your brand tone, Get started with a free trial today.
+        </p>
+        <button
+          class="hidden md:block bg-[#f54f20] hover:opacity-90 hover:-translate-y-1 hover:shadow-xl text-white font-family py-4 px-[120px] rounded-lg transition-all duration-300 text-sm md:text-md"
+        >
+          <p class="text-md text-nowrap">Start Now</p>
+        </button>
+
+        <div class="max-w-screen-xl mx-auto">
+          <img src="./images/footer-cta.webp" class="w-full" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+
+    <footer
+      class="max-w-screen-lg mx-auto px-6 py-10 bg-white text-gray-700 mt-[80px] md:mt-[130px]"
+    >
+      <!-- Footer Content -->
+      <div class="flex flex-col md:flex-row justify-between gap-8">
+        <!-- Left Section (Logo and Description) -->
+        <div class="flex flex-col space-y-4">
+          <!-- Logo -->
+          <div class="flex items-center space-x-3">
+            <img src="./images/speedy.svg" alt="Speedy Logo" class="w-20" />
+          </div>
+          <!-- Description -->
+          <p class="text-sm text-[#848684]">
+            Speedy makes marketing easy so you can build your business core.
+          </p>
+          <p class="text-sm text-[#848684]">Made with 🧡 in San Francisco.</p>
+        </div>
+
+        <!-- Right Section (Support, Connect & Company Links) -->
+        <div
+          class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0"
+        >
+          <!-- Support Section -->
+          <div class="flex flex-col space-y-4">
+            <h4 class="font-bold text-lg text-black">Support</h4>
+            <div class="flex flex-col space-y-2">
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Cookie Policy</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Privacy Policy</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Terms & Conditions</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Fair Use Policy</a
+              >
+            </div>
+          </div>
+
+          <!-- Connect Section -->
+          <div class="flex flex-col space-y-4">
+            <h4 class="font-bold text-lg text-black">Connect</h4>
+            <div class="flex flex-col space-y-2">
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Book Meeting</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Twitter</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >YouTube</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+
+          <!-- Company Section -->
+          <div class="flex flex-col space-y-4">
+            <h4 class="font-bold text-lg text-black">Company</h4>
+            <div class="flex flex-col space-y-2">
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Blogs</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Pricing</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >Affiliate Partner</a
+              >
+              <a href="#" class="text-sm text-[#848684] hover:text-[#f54f20]"
+                >AI For Enterprise</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section (Copyright and Line) -->
+      <div
+        class="mt-8 border-t-[1px] border-[#f7f7f7] pt-4 text-center text-sm text-[#848684]"
+      >
+        <p>© 2025 SpeedyBrand. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
