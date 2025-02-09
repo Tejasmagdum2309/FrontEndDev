@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+      @media (min-width: 768px) {
+        /* md breakpoint */
+        .logos-slide img {
+          height: 50px; /* Apply 50px height for md+ screens */
+          margin: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mobile menu -->
+    <div
+      class="fixed  w-full top-0 left-0 z-50 bg-gray-800"
+      id="mobile-menu"
+    >
+      <div
+        class="p-4 h-full flex flex-col gap-10 relative"
+      >
+        <!-- Close Button -->
+        <button
+          id="menu-close"
+          class="absolute z-50 top-4 right-4 text-white focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Items -->
+        <a href="#" class="block text-white">Home</a>
+        <a href="#" class="block text-white">About</a>
+        <a href="#" class="block text-white">Our Services</a>
+
+        <!-- Button for Booking Meeting -->
+        <a href="#" class="block text-white max-w-max">
+          <p class="bg-[#078d7a]  px-5 py-2 rounded-md cursor-pointer">
+           
+            Contact Us
+          </p>
+        </a>
+
+      </div>
+    </div>
+
+    <div id="main-content" class="transition-all duration-900">
+
+    <nav
+      id="navbar"
+      class="w-full z-10 transition-colors duration-300 ease-in-out "
+    >
+      <div
+        class="px-4 md:px-4  max-w-screen-xl mx-auto  md:pt-6 md:pb-4 py-4 md:py-2 flex items-center text-md "
+      >
+        <!-- Left Section (Logo) -->
+        <div class="flex-1 flex justify-start">
+          <a href="#" class="font-bold text-gray-800">
+            <img src="./images/logo-1024x129.png" alt="Logo" class="w-[150px] md:w-[240px]" />
+          </a>
+        </div>
+
+        <!-- Centered Navigation Links -->
+        <div class="flex-1 flex justify-center items-center gap-6">
+          <ul class="hidden md:flex text-nowrap gap-10">
+            <li><a href="#" class="hover:text-[#078d7a]">Home</a></li>
+            <li><a href="#" class="hover:text-[#078d7a]">About</a></li>
+            <li><a href="#" class="hover:text-[#078d7a]">Our Services</a></li>
+           
+          </ul>
+          
+          <!-- ( Button ) -->
+        <div class="flex justify-end items-center min-w-[150px] gap-4">
+          <a
+            ><button
+            class="hidden md:block border-2 border-[#078d7a] hover:opacity-90 hover:bg-[#078d7a]  text-[#078d7a] hover:text-white font-family py-2 px-6 rounded-md transition-all duration-300 text-sm md:text-md"
+          >
+            <p class="text-lg font-family text-nowrap  ">Contact Us</p>
+          </button></a
+          >
+        
+        </div>
+        </div>
+
+        
+
+        <!-- Hamburger Menu -->
+        <button
+          class="block md:hidden mr-3 focus:outline-none"
+          id="menu-toggle"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    
+
+    <!-- Hero section -->
+
+    <section id="hero" class="px-2 md-px-0 relative">
+      <div
+        class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between py-[40px] md:py-[60px] gap-10"
+      >
+        <!-- left section -->
+        <div id="t1" class="flex flex-col gap-4 flex-1 pr-0 md:pr-[80px] pt-10 ">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center md:text-start text-[#078d7a]">
+            Transform Your Business with Expert IT Solutions
+          </h2>
+
+          <p
+            class="text-md md:text-lg px-2 md:px-0 text-[#9aa7ad] mb-5 text-center md:text-start"
+          >
+          We specialize in IT services, cloud computing, cybersecurity, and digital transformation. Let’s build the future of your business together.
+          </p>
+
+          <span class="flex flex-col md:flex-row items-center md:items-start gap-4">
+         
+
+          <button
+            class="border-2 max-w-max border-[#078d7a] bg-[#078d7a] text-white hover:opacity-90 hover:bg-[#078d7a]  text-[#078d7a] hover:text-white font-family py-2 px-6 rounded-md transition-all duration-300 text-sm md:text-md"
+          >
+            <p class="text-lg font-family text-nowrap  ">Get Started →</p>
+          </button>
+          
+          <button
+            class="border-2 border-[#078d7a] hover:opacity-90 hover:bg-[#078d7a]  text-[#078d7a] hover:text-white font-family py-2 px-6 rounded-md transition-all duration-300 text-sm md:text-md"
+          >
+            <p class="text-lg font-family text-nowrap  ">Ask For Consultation →</p>
+          </button>
+
+          </span>
+
+          
+        </div>
+
+        <!-- right section -->
+        <div id="t1" class="flex flex-1 justify-center">
+          <img class="w-[80%]" src="./images/banner-image-1-1.png" alt="" />
+        </div>
+      </div>
+     
+    </section>
+
+    <!-- section 1-->
+
+    <section id="section-1" class="mt-[40px] p-2 md:p-0 bg-[#e2efed]">
+      <div  class="flex flex-col justify-center items-center pt-12 gap-6">
+        <h2 id="t1" class="text-3xl md:text-4xl text-center font-semibold font-stretch-expanded">
+            Overview       </h2>
+        <p  id="t1" class="text-lg md:text-xl text-[#9aa7ad] text-center">
+            Strategic IT Consulting & Digital Solutions         </p>
+
+
+            <div   class="mx-auto max-w-screen-xl mt-6 md:mt-20">
+                <!-- card secton -->
+                <div id="lr-1"
+                  class="max-w-screen-xl mx-auto  flex flex-col md:flex-row justify-between py-[50px] gap-6"
+                >
+                  <!-- left section -->
+                  <div id="l" class="flex flex-col justify-center flex-1 pr-0 md:pr-[80px]">
+                    <h2 class="text-md md:text-lg font-bold mb-5 text-center md:text-start text-[#216afb]">
+                        Expert IT Strategy & Consulting
+                    </h2>
+                
+                    <h3 class="text-xl md:text-3xl font-bold px-2 md:px-0 text-[#101010] mb-5 text-center md:text-start">
+                        Transform your business with tailored IT solutions & expert guidance.
+                    </h3>
+                
+                    <p class="text-md md:text-lg px-2 md:px-0 text-[#9aa7ad] mb-5 text-center md:text-start">
+                        Leverage cutting-edge technologies, industry insights, and strategic IT planning 
+                        to optimize operations and drive digital transformation. Future-proof your business 
+                        with secure, scalable, and innovative solutions.
+                    </p>
+                </div>
+                
+        
+                  <!-- right section -->
+                  <div id="l" class="flex flex-1 justify-center">
+                    <img class="w-[90%] h-[86%] rounded-md" src="./images/1.jpg" alt="" />
+                  </div>
+                </div>
+                
+                <!-- card secton -->
+                <div id="lr-2"
+                  class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between py-[50px] gap-6"
+                >
+                  <!-- left section -->
+                  
+         <div id="l" class="flex flex-1 justify-center">
+                    <img class="w-[90%] h-[86%] rounded-md" src="./images/3.jpg" alt="" />
+                  </div>
+                  <!-- right section -->
+                 <div id="l" class="flex flex-col justify-center flex-1 pr-0 md:pr-[80px] ml-0 md:ml-14">
+                    <h2 class="text-md md:text-lg font-bold mb-5 text-center md:text-start text-[#216afb]">
+                        Comprehensive IT Services
+                    </h2>
+                
+                    <h3 class="text-xl md:text-3xl font-bold px-2 md:px-0 text-[#101010] mb-5 text-center md:text-start">
+                        Secure, scalable, and efficient IT infrastructure & solutions.
+                    </h3>
+                
+                    <p class="text-md md:text-lg px-2 md:px-0 text-[#9aa7ad] mb-5 text-center md:text-start">
+                        From cloud computing and cybersecurity to infrastructure management, we provide tailored IT 
+                        solutions that enhance efficiency and security. Let us manage your IT while you focus on growth.
+                    </p>
+                   
+                  </div>
+                </div>
+        
+                <!-- card secton -->
+                <div id="lr-3"
+                  class="max-w-screen-xl mx-auto  flex flex-col md:flex-row justify-between py-[50px] gap-6"
+                >
+                  <!-- left section -->
+                  <div id="l" class="flex flex-col justify-center flex-1 pr-0 md:pr-[80px]">
+                    <h2 class="text-md md:text-lg font-bold mb-5 text-center md:text-start text-[#216afb]">
+                        Cutting-Edge Software Development
+                    </h2>
+                
+                    <h3 class="text-xl md:text-3xl font-bold px-2 md:px-0 text-[#101010] mb-5 text-center md:text-start">
+                        Custom software and mobile applications built for the future.
+                    </h3>
+                
+                    <p class="text-md md:text-lg px-2 md:px-0 text-[#9aa7ad] mb-5 text-center md:text-start">
+                        Our expert developers create intuitive, robust, and scalable web & mobile applications using 
+                        the latest technologies. Drive digital success with innovative software solutions tailored to your needs.
+                    </p>
+                   
+                  </div>
+        
+                  <!-- right section -->
+                  <div id="l" class="flex flex-1 justify-center">
+                    <img class="w-[90%] h-[86%] rounded-md" src="./images/4.jpg" alt="" />
+                  </div>
+                </div>
+        
+              
+        
+        
+              </div>
+        
+
+        
+      </div>
+    </section>
+
+
+    <!-- section cards - -->
+    <section id="section-3" class="mt-[40px] p-2 md:p-0">
+        <div id="cards" class="flex flex-col md:flex-row justify-center items-center mx-auto  max-w-screen-xl pt-12 gap-6">
+         
+            <div id="c1" class="border-2 flex flex-1 flex-col gap-1 border-[#078d7a] p-6">
+                 <img src="./images/mini.jpg" class="w-14" alt="">
+                 <h2 class="text-lg md:text-2xl font-bold mb-5 text-center md:text-start ">Investment Bank
+                    
+                    </h2>
+                    <p class="text-md md:text-lg px-2 md:px-0 text-[#9aa7ad] mb-5 text-center md:text-start">           
+                        Our IT consulting services empower investment banks with advanced technologies like AI, ML, blockchain, and data analytics to enhance efficiency, optimize risk management, and seize new opportunities. We design tailored solutions to streamline operations, drive informed decision-making, and elevate customer experiences.                    </p>
+
+
+                    <button class="text-[#078d7a] max-w-max">Read more →</button>
+
+            </div>
+
+            <div id="c2" class="border-2 flex flex-1 flex-col gap-1 border-[#078d7a] p-6">
+                <img src="./images/mini.jpg" class="w-14" alt="">
+                <h2 class="text-lg md:text-2xl font-bold mb-5 text-center md:text-start ">Investment Bank
+                   
+                   </h2>
+                   <p class="text-md md:text-lg px-2 md:px-0 text-[#9aa7ad] mb-5 text-center md:text-start">           
+                       Our IT consulting services empower investment banks with advanced technologies like AI, ML, blockchain, and data analytics to enhance efficiency, optimize risk management, and seize new opportunities. We design tailored solutions to streamline operations, drive informed decision-making, and elevate customer experiences.                    </p>
+
+
+                   <button class="text-[#078d7a] max-w-max">Read more →</button>
+
+           </div>
+
+
+           
+  
+          
+        </div>
+      </section>
+
+
+      <!-- last -->
+      <section id="last" class="mt-[40px] p-2 md:p-0 ">
+        <div id="ceo" class="flex flex-col justify-center items-center mx-auto max-w-screen-xl gap-6 p-2 py-10 md:py-14 md:p-14 rounded-xl">
+                <div class="max-w-4xl mx-auto ">
+                    <h2 id="ele" class="text-md md:text-xl font-family mb-2 text-[#078d7a]">Founding </h2>
+                    <h1 id="ele" class="text-3xl md:text-5xl font-bold text-gray-900">Team Member</h1>
+                    <div class="bg-white  p-6 mt-4 flex flex-col justify-center items-center rounded-lg text-left">
+                        <img id="ele" src="./images/CEO.jpg" class="w-[240px] rounded-md" alt="">
+                        <h3 id="ele" class="text-xl md:text-2xl font-semibold text-gray-900">Michael Whife</h3>
+                        <p id="ele" class="text-gray-600 text-lg mb-4">Founder and CEO</p>
+                        <p  id="ele"class="text-gray-700 leading-relaxed">
+                            Seasoned executive with a versatile and extensive international leadership background. International leadership experience in IT, marketing, finance, and sales roles which cultivated a deep understanding of and respect for the nuanced intricacies of global business.
+
+
+                        </p>
+                        <p id="ele" class="text-gray-700 leading-relaxed mt-4">
+                            A passionate and inspiring leader that excels in building global teams from the ground up and in motivating excellence among all individuals.
+
+                        </p>
+                        <p  id="ele"class="text-gray-700 leading-relaxed mt-4">
+                            Visionary in his ability to anticipate the ever-changing and evolving needs of the B2B demand gen industry and its clients. Effectively fuels innovative product development initiatives that are ahead of their time and able to drive continued growth and success.
+
+                        </p>
+
+
+
+                    </div>
+                </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+
+      <footer class="bg-black text-white py-8 md:py-14 mt-8">  
+        <div id="f" class="max-w-screen-lg mx-auto px-4 md:px-6">  <div class="md:flex md:justify-between md:items-center">  <div>
+        <p class="text-sm">&copy; 2023. All Rights Reserved.</p>
+      </div >
+      <div class="mt-4 md:mt-0">  <ul class="flex space-x-4">
+          <li><a href="#" class="text-sm cursor-pointer hover:text-gray-600">Privacy Policies</a></li>
+          <li><a href="#" class="text-sm cursor-pointer hover:text-gray-600">Terms & Conditions</a></li>
+          <li><a href="#" class="text-sm cursor-pointer hover:text-gray-600">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <a href="#" class="text-sm hover:text-gray-300">LinkedIn</a>
+      </div>
+    </div>
+        <div class="mt-4 text-left">  <p class="text-sm">Company</p>
+          <p class="text-sm">Address:<br>7887 E Belleview Ave Ste 1100, Greenwood Village, CO 80111, USA</p>
+          <p class="text-sm mt-2">Our services specialize in understanding the specific needs and challenges of businesses and developing comprehensive IT strategies that align with customer’s overall objectives.</p>
+        </div>
+
+  </div>
+</footer>
+
+
+    </div>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
