@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consilior It</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+      @media (min-width: 768px) {
+        /* md breakpoint */
+        .logos-slide img {
+          height: 50px; /* Apply 50px height for md+ screens */
+          margin: 0 10px;
+        }
+
+           /* Slow scrolling middle image */
+           .middle-container {
+    position: relative;
+    width: 100%;
+    height: 75vh; /* Only visible in 40-60vh space */
+    overflow: hidden; /* Prevent full 100vh from showing */
+}
+
+.middle-image {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Image takes full 100vh */
+    object-fit: cover;
+}
+
+.fixnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #05050f;
+    transition: all 0.3s ease;
+    border-bottom: 0.3px solid #2f343b;
+    border-radius: 1px;
+}
+
+
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Mobile menu -->
+    <div
+      class="fixed  w-full top-0 left-0 z-50 bg-gray-800"
+      id="mobile-menu"
+    >
+      <div
+        class="p-4 h-full flex flex-col gap-6 relative"
+      >
+        <!-- Close Button -->
+        <button
+          id="menu-close"
+          class="absolute z-50 top-4 right-4 text-white focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Items -->
+        <a href="#" class="block text-white">Home</a>
+        <a href="#" class="block text-white">Private Policy</a>
+        <a href="#" class="block text-white">Contact Us</a>
+
+       
+
+      </div>
+    </div>
+
+
+    <div id="main-content" class="transition-all duration-900 ">
+
+    <nav
+      id="navbar"
+      class="w-full absolute top-0 left-0 z-10 transition-colors duration-300 ease-in-out transform "
+    >
+      <div
+        class="px-4 md:px-10 md:pt-6 md:pb-4 py-4 md:py-2 flex items-center justify-between text-md "
+      >
+        <!-- Left Section (Logo) -->
+        <div class=" flex justify-start">
+          <a href="#" class="font-bold text-gray-800">
+            <img src="./images/mantis_logo_white.png" alt="Logo" class="w-[30px] md:w-[50px]" />
+          </a>
+        </div>
+
+        <!-- Centered Navigation Links -->
+        <div class=" flex justify-center items-center gap-6 pr-0 md:pr-14">
+          <ul class="hidden md:flex text-nowrap gap-14 font-bold text-white">
+            <li><a href="#" class="hover:text-[#078d7a]">Home</a></li>
+            <li><a href="#" class="hover:text-[#078d7a]">Private Polacy</a></li>
+            <li><a href="#" class="hover:text-[#078d7a]">Contant Us</a></li>
+           
+          </ul>
+          
+         
+        </div>
+
+        
+
+        <!-- Hamburger Menu -->
+        
+        <button
+        class="block md:hidden text-white bg-white p-2 rounded-md shadow-md hover:bg-gray-200 transition focus:outline-none"
+        id="menu-toggle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="black"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+      
+      </div>
+    </nav>
+    
+
+    <!-- Hero section -->
+
+    <section id="hero" class="relative w-full h-[65vh] md:h-[95vh]" >
+          <img src="./images/dex_handheld_gamepad_final-min.jpg" class="object-cover w-full h-full" alt="">
+          <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 space-y-4 max-w-[90%] md:max-w-[60%] px-4">
+            <h2 id="t1" class="text-xl md:text-5xl font-bold text-white text-center text-nowrap md:text-wrap">
+              PRO QUALITY GAMING. ON THE GO.
+            </h2>
+            <p id="t1" class="text-md md:text-lg text-gray-300 text-center">
+              With Mantis, turn your smartphone into a Pro Gaming Handheld console.
+            </p>
+          </div>
+          
+    </section>
+
+    <!-- Google Play bg-[#078d7a] -->
+
+    <section id="google-play" class="py-10 md:py-24 bg-[#12121a] bg-[url(./images/apps_background.jpg)] bg-center bg-cover ">
+      <div class="flex flex-col items-center justify-center gap-14">
+        <h2 id="t1" class="text-3xl md:text-5xl font-bold text-white text-center">
+          OUR products ON GOOGLE PLAY
+        </h2>
+        <div  class="flex flex-col items-center justify-center gap-6">
+        <img id="t1" src="./images/logo1-1.png" alt="">
+
+        <p class="text-sm md:text-lg font-bold text-gray-300 text-center" >Mantis Gamepad PRO</p>
+
+        <img src="./images/Untitled-1.png" alt="">
+</div>
+
+        
+      </div>
+    </section>
+
+
+    <!-- imformation -->
+
+    <section id="information" class="">
+      <div class="flex flex-col md:flex-row items-center bg-[#06bd46]">
+        <!-- Left Side - Image -->
+        <div class="w-full md:w-[55%]">
+          <img src="./images/gamepad_on_desk.jpg" class="object-cover w-full h-[260px] md:h-[560px]" alt="">
+        </div>
+    
+        <!-- Right Side - Text -->
+        <div id="r1" class="w-full md:flex-1 px-6 md:px-12 py-20 md:py-0">
+          <h2 id="r11" class="text-3xl md:text-5xl font-bold text-white text-start  md:text-left">
+            Exactly the app your powerful Gamepad needs!
+          </h2>
+    
+          <p id="r11" class="text-sm md:text-lg font-bold mt-4">
+            You bought a High-End Gamepad, but it doesn’t actually work with 99% of Android Games, right? That’s where Mantis comes in!
+          </p>
+    
+          <p id="r11" class="text-sm md:text-lg font-bold mt-4">
+            Mantis has been tested with 300+ Gamepad Models and Hundreds of Thousands of Games from Google Play.
+          </p>
+    
+          <p id="r11" class="text-sm md:text-lg font-bold mt-4">
+            And, it just works!
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-[#05050f]">
+        
+    
+        <!-- Left Side - Text -->
+        <div id="r2" class="w-full md:flex-1 px-6 md:px-20 md:py-0 py-20">
+          <h2 id="r22" class="text-3xl md:text-5xl font-bold text-[#06bd46] text-start  md:text-left">
+            Exclusive
+            Game-Ready Feature set          </h2>
+    
+          <p id="r22" class="text-sm md:text-lg font-bold mt-4 text-white">
+            Mantis is filled with Exclusive Features like Game Phases, Gamepad Styles(PS, Xbox, Nintendo), Paddle Buttons Support, Discrete X-Y Axis Sensitivity, MOBA Smart Cast, Sequence Buttons, Virtual Mouse Mode, and many more.
+          </p>
+    
+          <p id="r22" class="text-sm md:text-lg font-bold mt-4 text-white">
+            Mantis has been tested to work perfectly with Games like Wild Rift, eFootball, PUBG Mobile, Call of Duty Mobile, Apex Legends, Genshin Impact and so on.
+          </p>
+    
+         
+        </div>
+        
+        <!-- Right Side - Image -->
+        <div class="w-full md:w-[55%]">
+          <img src="./images/gamepad_on_desk.jpg" class="object-cover w-full h-[260px] md:h-[560px]" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- bg middle slow animatoin section -->
+     <!-- Middle Image (Slow Scroll) -->
+     <div class="middle-container">
+      <img class="middle-image" id="middle-img" src="./images/Screenshot-Section-min.jpg" alt="Middle Image">
+     </div>
+
+
+<!-- rating -->
+<section id="rating" class="bg-[#181a1e] text-white py-20">
+  <div class="max-w-screen-xl mx-auto flex flex-col justify-center items-center gap-14">
+    <h2 class="text-3xl md:text-5xl font-bold text-center">
+      HIGHEST RATED IN THE SEGMENT
+    </h2>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+      <!-- Rating 1 -->
+      <div class="flex flex-col justify-center items-center">
+        <p class="text-lg">MANTIS GAMEPAD PRO</p>
+        <h1 class="text-7xl font-bold">4.2</h1>
+        <img src="./images/Group-9025-300x50.png" alt="Rating Image">
+      </div>
+
+      <!-- Rating 2 -->
+      <div class="flex flex-col justify-center items-center">
+        <p class="text-lg">MANTIS GAMEPAD PRO</p>
+        <h1 class="text-7xl font-bold">4.2</h1>
+        <img src="./images/Group-9025-300x50.png" alt="Rating Image">
+      </div>
+    </div>
+  </div>
+
+  <section id="reviews" class="bg-[#181a1e] text-white py-16">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="splide" id="review-slider">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <!-- Slide 1 -->
+            <li class="splide__slide">
+              <div class="p-6 text-center">
+                <p class="text-lg md:text-xl font-medium">
+                  "This app single handedly makes Razer Kishi worth a buy. After buying Kishi, my phone is basically a Switch! Only thanks to this app."
+                </p>
+                <h3 class="mt-4 text-xl font-bold">Joseph McQueen</h3>
+                <p class="text-sm text-gray-400">Rated 5 Stars on Google Play (Device: Xiaomi Mi 10i)</p>
+              </div>
+            </li>
+  
+            <!-- Slide 2 -->
+            <li class="splide__slide">
+              <div class="p-6 text-center">
+                <p class="text-lg md:text-xl font-medium">
+                  "I've bought Pro just for League of Legends, and with that, playing MOBA feels better than on Series X!"
+                </p>
+                <h3 class="mt-4 text-xl font-bold">Alex Thompson</h3>
+                <p class="text-sm text-gray-400">Rated 5 Stars on Google Play (Device: Samsung S21 Ultra)</p>
+              </div>
+            </li>
+  
+            <!-- Slide 3 -->
+            <li class="splide__slide">
+              <div class="p-6 text-center">
+                <p class="text-lg md:text-xl font-medium">
+                  "This app is 100% must-have if you want to elevate your mobile gaming experience."
+                </p>
+                <h3 class="mt-4 text-xl font-bold">Maria Gonzales</h3>
+                <p class="text-sm text-gray-400">Rated 5 Stars on Google Play (Device: OnePlus 9 Pro)</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+  
+        
+      </div>
+    </div>
+  </section>
+  
+  
+  
+</section>
+
+
+<!-- information -->
+<section id="information-2" class="">
+  <div class="flex flex-col md:flex-row items-center bg-[#05050f]">
+    <!-- Left Side - Image -->
+    <div class="w-full md:w-[55%]">
+      <img src="./images/NMC-Engine_Final.jpg" class="object-cover w-full h-[260px] md:h-[560px]" alt="">
+    </div>
+
+    <!-- Right Side - Text -->
+    <div id="r3" class="w-full md:flex-1 px-6 md:px-12 py-20 md:py-0">
+      <h2 id="r33" class="text-3xl md:text-5xl font-bold text-[#06bd46] text-start  md:text-left">
+        Proprietary NMC mapping Engine
+      </h2>
+
+      <p id="r33" class="text-sm md:text-lg font-bold mt-4 text-white">
+        Mantis Apps use our Proprietary NMC Mapping Technology to map Gaming Peripherals to Touchscreens. 
+      </p>
+
+      <p id="r33" class="text-sm md:text-lg font-bold mt-4 text-white">
+        The NMC Engine is the most intricate solution in its category and powers complex touchscreen mapping actions even on the latest versions of Android(i.e. Android 13, as of now) with unmatched latency and accuracy.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center bg-[#06bd46]">
+    
+
+    <!-- Left Side - Text -->
+    <div id="r4" class="w-full md:flex-1 px-6 md:px-20 py-20 md:py-0">
+      <h2 id="r44" class="text-3xl md:text-6xl font-bold text-white text-start  md:text-left">
+        FASTEST GROWING IN THE SEGMENT  
+         </h2>
+
+      <p id="r44" class="text-sm md:text-lg font-bold mt-4 ">
+        With over 4.5 Million Organic Installs the Mantis Apps have seen viral growth on Google Play, due to the wonderful word-of-mouth from our supportive user base.
+      </p>
+
+      <p id="r44" class="text-sm md:text-lg font-bold mt-4 ">
+        Ever since our inception, we’ve stayed connected with our incredible community from across Google Play & Social Media Platforms like Facebook, Reddit & Instagram, who’ve in turn been helping us in perfecting the Apps.       
+      </p>
+
+     
+    </div>
+    
+    <!-- Right Side - Image -->
+    <div class="w-full md:w-[55%]">
+      <img src="./images/Growth_final_2.jpg" class="object-cover w-full h-[560px]" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- last -->
+
+<section class="bg-black py-20">
+  <h2 class="text-3xl md:text-5xl font-bold text-[#06bd46] text-center">RECORDED WITH MANTIS</h2>
+  <h4 class="text-sm md:text-lg text-gray-300 text-center mt-4">Original Gameplay recorded on google pixel 4a, Android 13 & Samsung galaxy tab s7+, android 12</h4>
+  
+  <section id="image-slider" class="w-screen flex items-center justify-center px-10 md:px-20 mt-20">
+    <div class="splide w-full" id="image-carousel">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><img src="./images/NMC-Engine_Final.jpg" class="rounded-lg shadow-lg w-full"></li>
+          <li class="splide__slide"><img src="./images/NMC-Engine_Final.jpg" class="rounded-lg shadow-lg w-full"></li>
+          <li class="splide__slide"><img src="./images/NMC-Engine_Final.jpg" class="rounded-lg shadow-lg w-full"></li>
+          <li class="splide__slide"><img src="./images/NMC-Engine_Final.jpg" class="rounded-lg shadow-lg w-full"></li>
+        </ul>
+      </div>
+  
+      <!-- Dots Navigation -->
+      <div class="splide__pagination mt-4"></div>
+    </div>
+  </section>
+  
+</section>
+
+<!-- footer -->
+
+  <footer class="bg-[#181a1e] text-white py-6">
+    <div class="flex flex-col px-20 gap-4">
+      
+      <!-- Social Icons -->
+      <div class="flex justify-center md:justify-start gap-6 text-gray-400">
+        <a href="#" aria-label="Facebook" class="hover:text-white">
+          <i class="fa-brands fa-facebook text-2xl"></i>
+        </a>
+        <a href="#" aria-label="Reddit" class="hover:text-white">
+          <i class="fa-brands fa-reddit text-2xl"></i>
+        </a>
+        <a href="#" aria-label="Twitter" class="hover:text-white">
+          <i class="fa-brands fa-twitter text-2xl"></i>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-white">
+          <i class="fa-brands fa-instagram text-2xl"></i>
+        </a>
+      </div>
+  
+      <!-- Copyright -->
+      <p class="text-sm text-gray-400 text-center md:text-left mt-4 md:mt-0">
+        Copyright © 2024 NEURAL MONKEY DIGITAL VENTURES PVT. LTD. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+    
+    
+   
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#review-slider', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 5000,
+        pauseOnHover: true,
+        arrows: true,
+        pagination: false,
+      }).mount();
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#image-carousel', {
+      type: 'loop',
+      perPage: 1.5, // Shows left & right images partially
+      focus: 'center',
+      gap: '1rem',
+      padding: '5rem',
+      autoplay: false,
+      pagination: true,
+      arrows: false,
+      breakpoints: {
+        1024: { perPage: 1.3, padding: '3rem' },
+        768: { perPage: 1.1, padding: '2rem' },
+      },
+    }).mount();
+  });
+  </script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
