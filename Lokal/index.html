@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lokal</title>
+    <link class="favicon" rel="icon" type="image/png" href="./images/lokalmain.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+      /**** Hide Scrollbar for Webkit Browsers ****/
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /**** Hide Scrollbar for Firefox ****/
+      .no-scrollbar {
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#ffffff]">
+    <!-- Mobile menu -->
+    <div class="fixed w-full top-0 left-0 z-50 bg-white" id="mobile-menu">
+      <div class="p-4 h-full flex flex-col gap-10 relative">
+        <!-- Close Button -->
+        <button
+          id="menu-close"
+          class="absolute z-50 top-4 right-4 text-black focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Items -->
+      <a href="#" class="hover:text-gray-400">Home</a>
+      <a href="#" class="hover:text-gray-400">Features</a>
+      <a href="#" class="hover:text-gray-400">Our Story</a>
+      <a href="#" class="hover:text-gray-400">Advertise with Us</a>
+      <a href="#" class="hover:text-gray-400">Careers</a>
+      <a href="#" class="hover:text-gray-400">Contact</a>
+
+        <!-- Button for Booking Meeting -->
+        <a href="#" class="block text-white max-w-max">
+          <p class="hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md px-5 py-2 cursor-pointer">
+            Download LoKal
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div id="main-content" class="transition-all duration-900">
+      <nav
+        id="navbar"
+        class="w-full fixed top-0 z-10 transition-colors duration-300 ease-in-out bg-[#191919] text-white"
+      >
+        <div
+          class="px-4 md:px-4 max-w-screen-xl mx-auto md:pt-4 md:pb-3 py-4 md:py-2 flex items-center text-md"
+        >
+          <!-- Left Section (Logo) -->
+          <div class="flex-1 flex justify-start">
+            <a href="#" class="font-bold text-gray-800">
+              <img
+                src="./images/Group-21.png"
+                alt="Logo"
+                class="w-[150px] md:w-[180px]"
+              />
+            </a>
+          </div>
+
+          <!-- Centered Navigation Links -->
+          <div class="flex-1 flex justify-center items-center gap-6">
+            <ul class="hidden md:flex text-nowrap gap-10">   
+              <li><a href="#" class="hover:text-gray-400">Home</a></li>
+              <li><a href="#" class="hover:text-gray-400">Features</a></li>
+              <li><a href="#" class="hover:text-gray-400">Our Story</a></li>
+              <li><a href="#" class="hover:text-gray-400">Advertise with Us</a></li>
+              <li><a href="#" class="hover:text-gray-400">Careers</a></li>
+              <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+            </ul>
+          </div>
+          <!-- ( Button ) -->
+          <div class="flex flex-1 justify-end items-center min-w-[150px] gap-4">
+          
+            <a
+              ><button
+                class="hidden md:block border-2 border-black hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md"
+              >
+                <p class="text-md font-family text-nowrap">DownLoad  Lokal</p>
+              </button></a
+            >
+          </div>
+
+          <!-- Hamburger Menu -->
+          <button
+            class="block md:hidden mr-3 focus:outline-none"
+            id="menu-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero section -->
+
+      <section
+        id="hero"
+        class="bg-[#191919] text-white"
+      >
+        <div class="max-w-screen-2xl mx-auto pt-[18vh] md:pt-[18vh] px-4 md:px-4 text-center flex flex-col items-center">
+             <h2 id="t1" class="text-4xl md:text-7xl font-semibold">One platform for everything <span class="text-[#ffbb00]">local</span>
+               </h2>
+                <p id="t1" class="mt-5 text-md md:text-3xl"> Trusted by over 45+ million Bharat users</p>
+
+                <div id="img" class="z-5 mt-20 max-w-screen-lg mx-auto  md:relative">      
+
+                  <div  id="scrollContainer" class="flex scrollbar-width overflow-x-auto mb-2">
+                    <img src="./images/1.png" class="md:absolute md:top-[4rem] md:left-[4.8rem]" alt=""><img src="./images/2.png" alt="">
+                    <img src="./images/jobs_hover.png" class="md:absolute   left-30  md:top-[0.25rem] md:left-[15.8rem]" alt="">
+                    <img src="./images/3.png" class="md:absolute   md:top-[-3rem] md:left-[25.8rem]" alt="">
+                    <img src="./images/4.png" class="md:absolute  md:top-[0.4rem] md:left-[40.5rem]" alt="">
+                    <img src="./images/5.png" class="md:absolute  md:top-[4rem] md:left-[51.4rem]" alt=""></div>
+                    <img  src="./images/Group-8584-1-2048x973.webp" class="mx-auto w-[90%]" alt="">
+
+                </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+
+      <section id="section-2" class="z-10 bg-[#f9f9f9] text-black">
+        <div
+          class="max-w-screen-lg text-center py-[80px] md:py-[120px] mx-auto px-2 md:px-0 "
+        >
+          <h2 class="text-2xl md:text-4xl font-semibold">
+            Supporting diverse communities across Bharat
+
+          </h2>
+
+          <div class="flex md:flex-nowrap flex-wrap justify-center gap-3 mt-10">
+             <img src="./images/1.svg" class=" w-[140px]" alt="">
+             <img src="./images/2.svg" class=" w-[140px]" alt="">
+             <img src="./images/3.svg" class=" w-[140px]" alt="">
+             <img src="./images/4.svg" class=" w-[140px]" alt="">
+             <img src="./images/5.svg" class=" w-[140px]" alt="">
+             <img src="./images/6.svg" class=" w-[140px]" alt="">
+             <img src="./images/7.svg" class=" w-[140px]" alt="">
+             <!-- <img src="./images/8.svg" class=" w-[140px]" alt=""> -->
+             <img src="./images/9.svg" class="w-[140px]" alt="">
+         </div>
+         
+
+        </div>
+
+      </section>
+
+      <!-- section 3 -->
+
+      <section id="section-3" class=" py-10 md:py-20">
+        <div class="mx-auto max-w-screen-xl px-10">
+          
+
+          <div id="lr1"
+            class="flex flex-col md:flex-row gap-12 mt-20 px-1 md:px-6 items-center max-w-screen-xl mx-auto"
+          >
+            <!-- Left Section (Text) -->
+            
+<div id="lr11" class="rounded-md w-full  md:w-1/2 flex  ">
+    
+              <img
+                src="./images/Pixel-6-Pro-4.png"
+                class="rounded-xl shadow-lg w-[45%] max-w-md md:max-w-md"
+                alt="Seamless Connectivity"
+              />
+            </div>
+            <!-- Right Section (Image) -->
+            <div id="lr11" class="w-full md:w-1/2">
+              <h2 class="text-3xl md:text-5xl font-semibold leading-tight">
+                  Latest local Updates for Bharat
+              </h2>
+              <p class="my-6 text-base md:text-2xl text-[#7a7a8b]">
+                Stay informed with latest local stories. Explore breaking, local, and trending topics from trusted sources around your locality.
+
+              </p>
+
+              <button
+              class=" hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md"
+            >
+              <p class="text-lg font-family text-nowrap">Explore local updates</p>
+            </button>            </div>
+          </div>
+
+          <div id="lr2"
+            class="flex flex-col md:flex-row gap-12 mt-20 px-1 md:px-6 items-center max-w-screen-xl mx-auto"
+          >
+          <!-- left -->
+          <div id="lr22" class="w-full md:w-1/2">
+            <h2 class="text-3xl md:text-5xl font-semibold leading-tight">
+                Jobs from diverse categories
+                
+                
+                          </h2>
+            <p class="my-6 text-base md:text-2xl text-[#7a7a8b]">
+                With 25 lakh+ job opportunities available, reach out to the recruiter directly to apply based on your qualification and interested job role.
+
+            </p>
+            
+            <div class="flex gap-6 items-center">
+            <button
+            class=" hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md"
+          >
+            <p class="text-lg font-family text-nowrap">Post a job</p>
+          </button>    <p class="text-md md:text-lg font-bold text-nowrap text-[#0e56a8] underline hover:opacity-90">Search jobs -></p>     </div>     
+        </div>
+          <!-- Right Section (Image) -->
+          <div id="lr22" class="rounded-md w-full md:w-1/2 flex justify-end">
+    
+            <img
+              src="./images/Pixel-6-Pro-6.png"
+              class="rounded-xl shadow-lg w-[45%] max-w-md md:max-w-md"
+              alt="Seamless Connectivity"
+            />
+          </div>
+          </div>
+
+          <div id="lr3"
+            class="flex flex-col md:flex-row gap-12 mt-20 px-1 md:px-6 items-center max-w-screen-xl mx-auto"
+          >
+                      <!-- Left Section (Text) -->
+            
+<div id="lr33" class="rounded-md w-full md:w-1/2 flex ">
+    
+    <img
+      src="./images/Pixel-6-Pro-7.webp"
+      class="rounded-xl shadow-lg w-[45%] max-w-md md:max-w-md"
+      alt="Seamless Connectivity"
+    />
+  </div>
+  <!-- Right Section (Image) -->
+  <div id="lr33" class="w-full md:w-1/2">
+    <h2 class="text-3xl md:text-5xl font-semibold leading-tight">
+        Approaching Bharat via Lokal
+        
+         </h2>
+    <p class="my-6 text-base md:text-2xl text-[#7a7a8b]">
+        Unlock your business growth today by advertising on Lokal App. Reach your target audience easily, boost brand visibility, and drive results. Partner with us to elevate your marketing strategy today.
+
+    </p>
+
+    <button
+    class="  hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md"
+  >
+    <p class="text-lg font-family text-nowrap"> Advertise now  </p>
+  </button>            </div>
+          </div>
+
+          <div id="lr4"
+            class="flex flex-col md:flex-row gap-12 mt-20 px-1 md:px-6 items-center max-w-screen-xl mx-auto"
+          >
+           
+              <!-- left -->
+              <div id="lr44" class="w-full md:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-semibold leading-tight">
+                    Discover your life partner
+                    
+                    
+                              </h2>
+                <p class="my-6 text-base md:text-2xl text-[#7a7a8b]">
+                    We are not missing a chance to maximise your opportunities in finding the one for you. Create your profile on Lokal Matrimony and dive into an ocean of choices across caste, location, interests and much more to find your perfect love.
+    
+                </p>
+                
+                <button
+                class=" hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md"
+              >
+                <p class="text-lg font-family text-nowrap">                    Download app                    
+                </p>
+              </button> 
+            </div>
+              <!-- Right Section (Image) -->
+              <div id="lr44" class="rounded-md w-full md:w-1/2 flex justify-end">
+        
+                <img
+                  src="./images/Pixel-6-Pro-6.png"
+                  class="rounded-xl shadow-lg w-[45%] max-w-md md:max-w-md"
+                  alt="Seamless Connectivity"
+                />
+              </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- section 4 -->
+
+      <section id="section-4" class="py-10 md:py-[250px] mt-[100px] md:mt-[100px] bg-[#191919]">
+        <div class="mx-auto max-w-screen-lg text-[#ffffff]">
+          <h2 class="text-3xl md:text-7xl font-semibold text-center">
+            Our story
+            
+                      </h2>
+          <p class="mt-16 text-sm md:text-2xl text-bold text-center">
+            Founded in 2018 with a mission to empower local communities, Lokal is now a trusted platform with 40+ million users. We unite people and  businesses dedicated to solving local needs within their community network. 
+          </p>
+
+          <h3 class="mt-10 text-2xl md:text-4xl font-semibold text-center text-[#6d7a7a]">Join us in building a brighter, connected future</h3>
+
+         
+        </div>
+      </section>
+
+      <!-- section 5 -->
+
+      <section id="section-5" class="mt-[120px]">
+        <div class="max-w-screen-xl mx-auto text-black">
+          <h2 class="text-2xl md:text-5xl font-semibold text-center">
+            Lokal in media
+          </h2>
+        </div>
+
+        <div
+          class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6  mt-20"
+        >
+          <!-- Card 1 -->
+          <div class="flex flex-col md:flex-row justify-center items-center md:items-start">
+                <div class="w-full md:w-1/2 rounded-md">
+                    <img src="./images/l1.webp" class="object-cover object-fit w-full md:w-[90%] " alt="">
+                </div>
+                <div class="py-4 flex-1">
+                       <h3 class="text-lg md:text-2xl font-semibold text-center md:text-start underline">
+
+                        How Lokal went from a whatsapp group to a top hyperlocal app
+                       </h3>
+                       <p class="mt-6 text-center md:text-start ">
+                        YourStory | 09/03/2022
+
+                       </p>
+                </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flex flex-col md:flex-row justify-center items-center md:items-start">
+            <div class="w-full md:w-1/2 rounded-md">
+                <img src="./images/l2.webp"  class="object-cover object-fit w-full md:w-[90%] " alt="">
+            </div>
+            <div class="py-4 flex-1">
+              <h3 class="text-lg md:text-2xl font-semibold text-center md:text-start underline">
+
+                    How Lokal went from a whatsapp group to a top hyperlocal app
+                   </h3>
+                   <p class="mt-6 text-center md:text-start ">
+                    YourStory | 09/03/2022
+
+                   </p>
+            </div>
+      </div>
+
+
+          <!-- Card 3 -->
+          <div class="flex flex-col md:flex-row justify-center items-center md:items-start">
+            <div class="w-full md:w-1/2 rounded-md">
+                <img src="./images/l2.webp"  class="object-cover object-fit w-full md:w-[90%] " alt="">
+            </div>
+            <div class="py-4 flex-1">
+              <h3 class="text-lg md:text-2xl font-semibold text-center md:text-start underline">
+
+                    How Lokal went from a whatsapp group to a top hyperlocal app
+                   </h3>
+                   <p class="mt-6 text-center md:text-start ">
+                    YourStory | 09/03/2022
+
+                   </p>
+            </div>
+      </div>
+
+          <!-- Card 4 -->
+          <div class="hidden md:block flex justify-center items-start">
+            <div class="w-1/2 rounded-md">
+                <img src="./images/l2.webp" class="object-cover w-[90%]" alt="">
+            </div>
+            <div class="py-4 flex-1">
+                   <h3 class="text-lg md:text-2xl font-semibold underline">
+
+                    How Lokal went from a whatsapp group to a top hyperlocal app
+                   </h3>
+                   <p class="mt-6">
+                    YourStory | 09/03/2022
+
+                   </p>
+            </div>
+      </div>
+
+
+      <div class="hidden md:block flex justify-center items-start">
+        <div class="w-1/2 rounded-md">
+            <img src="./images/l2.webp" class="object-cover w-[90%]" alt="">
+        </div>
+        <div class="py-4 flex-1">
+               <h3 class="text-lg md:text-2xl font-semibold underline">
+
+                How Lokal went from a whatsapp group to a top hyperlocal app
+               </h3>
+               <p class="mt-6">
+                YourStory | 09/03/2022
+
+               </p>
+        </div>
+  </div>
+
+
+  <div class="hidden md:block flex justify-center items-start">
+    <div class="w-1/2 rounded-md">
+        <img src="./images/l4.jpg" class="object-cover w-[90%]" alt="">
+    </div>
+    <div class="py-4 flex-1">
+           <h3 class="text-lg md:text-2xl font-semibold underline">
+
+            How Lokal went from a whatsapp group to a top hyperlocal app
+           </h3>
+           <p class="mt-6">
+            YourStory | 09/03/2022
+
+           </p>
+    </div>
+</div>
+
+
+<div class="hidden md:block flex justify-center items-start">
+  <div class="w-1/2 rounded-md">
+      <img src="./images/l5.webp" class="object-cover w-[90%]" alt="">
+  </div>
+  <div class="py-4 flex-1">
+         <h3 class="text-lg md:text-2xl font-semibold underline">
+
+          How Lokal went from a whatsapp group to a top hyperlocal app
+         </h3>
+         <p class="mt-6">
+          YourStory | 09/03/2022
+
+         </p>
+  </div>
+</div>
+
+
+<div class="hidden md:block flex justify-center items-start">
+  <div class="w-1/2 rounded-md">
+      <img src="./images/l7.jpg" class="object-cover w-[90%]" alt="">
+  </div>
+  <div class="py-4 flex-1">
+         <h3 class="text-lg md:text-2xl font-semibold underline">
+
+          How Lokal went from a whatsapp group to a top hyperlocal app
+         </h3>
+         <p class="mt-6">
+          YourStory | 09/03/2022
+
+         </p>
+  </div>
+</div>
+
+
+<div class="hidden md:block flex justify-center items-start">
+  <div class="w-1/2 rounded-md">
+      <img src="./images/l8.webp" class="object-cover w-[90%]" alt="">
+  </div>
+  <div class="py-4 flex-1">
+         <h3 class="text-lg md:text-2xl font-semibold underline">
+
+          How Lokal went from a whatsapp group to a top hyperlocal app
+         </h3>
+         <p class="mt-6">
+          YourStory | 09/03/2022
+
+         </p>
+  </div>
+</div>
+        </div>
+      </section>
+
+      <!-- section 6 -->
+
+      <section id="section-6" class="mt-[120px] text-black rounded-b-3xl mx-2 md:mx-0">
+        <h2 class="text-4xl md:text-5xl font-semibold text-center">
+          Our Investors
+        </h2>
+
+        <div
+          class=" border-[#f1f2f5] max-w-screen-xl mx-auto mt-16 rounded-xl flex scro gap-8 justify-center flex-wrap"
+        >
+        <img src="./images/i1.png" alt="">
+        <img src="./images/i2.png" alt="">
+
+        <img src="./images/i3.png" alt="">
+
+        <img src="./images/i4.png" alt="">
+
+        <img src="./images/i5.png" alt="">
+
+            
+        </div>
+      </section>
+
+
+
+      <!-- blog -->
+
+      <section id="blog" class="mt-[120px] text-black rounded-b-3xl mx-2 md:mx-0 flex flex-col items-center">
+        <h2 class="text-4xl md:text-5xl font-semibold text-center">
+          Our Blog
+        </h2>
+        <div class="max-w-screen-xl mx-auto p-6 mt-6">
+      
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="bg-white shadow-md rounded-lg overflow-hidden p-5">
+                  <img src="./images/b1.jpg" class="w-full h-48 object-cover rounded-md" alt="Government Jobs">
+                  <h2 class="mt-4 text-xl font-semibold text-gray-800">
+                      How to Apply for Government Jobs in India
+                  </h2>
+                  <p class="text-gray-600 text-sm mt-2">
+                      Securing a government job in India is a dream for many due to the stability, benefits, and sense of pride that come with it… 
+                      <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                  </p>
+                  <p class="text-gray-400 text-xs mt-3">September 29, 2023</p>
+              </div>
+      
+              <!-- Card 2 -->
+              <div class="bg-white shadow-md rounded-lg overflow-hidden p-5">
+                  <img src="./images/b2.jpg" class="w-full h-48 object-cover rounded-md" alt="Government Jobs">
+                  <h2 class="mt-4 text-xl font-semibold text-gray-800">
+                    Accountant Salary, Career, and Types: A Comprehensive Guide
+                  </h2>
+                  <p class="text-gray-600 text-sm mt-2">
+                    Accounting is a vital field that plays a crucial role in every business and organization. In this blog post…
+                      <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                  </p>
+                  <p class="text-gray-400 text-xs mt-3">September 29, 2023</p>
+              </div>
+      
+              <!-- Card 3 -->
+              <div class="bg-white shadow-md rounded-lg overflow-hidden p-5">
+                  <img src="./images/b3.jpg" class="w-full h-48 object-cover rounded-md" alt="Government Jobs">
+                  <h2 class="mt-4 text-xl font-semibold text-gray-800">
+                      How to Apply for Government Jobs in India
+                  </h2>
+                  <p class="text-gray-600 text-sm mt-2">
+                      Securing a government job in India is a dream for many due to the stability, benefits, and sense of pride that come with it… 
+                      <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                  </p>
+                  <p class="text-gray-400 text-xs mt-3">September 29, 2023</p>
+              </div>
+          </div>
+      </div>
+
+      <button 
+      class=" mt-16 hover:opacity-90 bg-[#ffbb00] text-black traking-widest font-family py-4 px-10 rounded-md transition-all duration-300 text-sm md:text-md"
+    >
+      <p class="text-xl font-bold text-nowrap">See more blogs</p>
+    </button>
+
+    <h2 class="text-xl md:text-4xl font-semibold text-center mt-[140px]">
+          Check out Lokal updates in Tamil & Telugu
+
+    </h2>
+
+    <div class="max-w-screen-xl mx-auto p-6 mt-6">
+      
+      <div class="flex flex-wrap items-center justify-center gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white hover:scale-110 duration-300 rounded-lg overflow-hidden p-5">
+              <img src="./images/Frame-48097184.png" class="w-full object-cover rounded-md" alt="Government Jobs">
+          </div>
+  
+          <!-- Card 2 -->
+          <div class="bg-white rounded-lg hover:scale-110 duration-300 overflow-hidden p-5">
+              <img src="./images/Frame-48097182.png" class="w-full object-cover rounded-md" alt="Government Jobs">
+          </div>
+      </div>
+  </div>
+      
+
+      </section>
+
+
+
+      <!-- last -->
+      <section class="bg-black mt-[140px]">
+        <div class="max-w-screen-xl mx-auto px-4 py-10 md:py-[180px] text-white rounded-xl flex flex-col md:flex-row items-center gap-10">
+          <!-- Left Side (Text) -->
+          <div class="w-full md:w-1/2 px-10">
+              <h2 class="text-3xl md:text-4xl font-semibold">Have a question or a thought?</h2>
+              <h1 class="text-3xl md:text-7xl font-bold mt-10">Reach out to us.</h1>
+              <img src="./images/Capa_1.png" class="mt-10" alt="">
+          </div>
+      
+          <!-- Right Side (Form) -->
+          <div class="w-full md:w-1/2 flex flex-col gap-6 text-black bg-white p-12 rounded-lg shadow-md">
+              <h2 class="text-2xl font-semibold text-gray-900">Share your details.</h2>
+              <p class="text-gray-600">Our team will reach out to you.</p>
+      
+              <div class="flex flex-col gap-4">
+                  <!-- Name -->
+                  <label class="text-gray-700 font-medium">Full Name</label>
+                  <input type="text" placeholder="Enter your name"
+                      class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+      
+                  <!-- Mobile Number -->
+                  <label class="text-gray-700 font-medium">Mobile Number</label>
+                  <input type="text" placeholder="Enter your mobile number"
+                      class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+      
+                  <!-- Email -->
+                  <label class="text-gray-700 font-medium">Email Address</label>
+                  <input type="email" placeholder="Enter your email"
+                      class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+      
+                  <!-- Select Requirements -->
+                  <label class="text-gray-700 font-medium">Select Requirements</label>
+                  <select class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                      <option value="">Choose an option</option>
+                      <option value="Consultation">Consultation</option>
+                      <option value="Technical Support">Technical Support</option>
+                      <option value="Business Inquiry">Business Inquiry</option>
+                  </select>
+      
+                  <!-- More Info -->
+                  <label class="text-gray-700 font-medium">More Info</label>
+                  <textarea placeholder="Tell us how we can help"
+                      class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 h-32"></textarea>
+      
+                  <!-- Submit Button -->
+                  <button class="w-full bg-[#1853f0] text-white py-3 rounded-md hover:bg-[#073cad] transition-all font-semibold">
+                      Submit
+                  </button>
+              </div>
+          </div>
+      </div>
+      
+      </section>
+
+      <!-- footer -->
+
+
+      <footer class="bg-white text-gray-800 py-10">
+        <div class="max-w-screen-xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Left Section: Heading -->
+            <div>
+              <img src="./images/Group-21.png" alt="">
+                <h2 class="text-xl font-semibold mt-6">Building the internet for <br> India's next billion users</h2>
+            </div>
+    
+            <!-- Middle Section: Links -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div>
+                    <h3 class="font-semibold text-lg mb-2">Information</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-500">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Content Disclaimer</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Grievance Redressal</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Community Guidelines</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Compliance Reports</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="font-semibold text-lg mb-2">Blogs</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-500">Our Websites</a></li>
+                        <li><a href="https://telugu.getlokalapp.com" class="hover:text-blue-500">telugu.getlokalapp.com</a></li>
+                        <li><a href="https://tamil.getlokalapp.com" class="hover:text-blue-500">tamil.getlokalapp.com</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Right Section: Contact & Address -->
+            <div>
+                <h3 class="font-semibold text-lg mb-2">Contact</h3>
+                <p class="text-sm"><a href="mailto:support@getlokalapp.com" class="hover:text-blue-500">support@getlokalapp.com</a></p>
+                <h3 class="font-semibold text-lg mt-4">Registered Address:</h3>
+                <p class="text-sm">
+                    #677, 27th Main Road, 13th Cross, HSR Layout Sector 1, <br>
+                    Bangalore, 560102
+                </p>
+            </div>
+        </div>
+    
+        <!-- Bottom Copyright -->
+        <div class="text-center text-sm text-gray-600 mt-8 border-t pt-4">
+            Copyright 2024 © Behtar Technology Pvt. Ltd. All rights reserved.
+        </div>
+    </footer>
+    
+    </div>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("scrollContainer");
+        container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
+      });
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
