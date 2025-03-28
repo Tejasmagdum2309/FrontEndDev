@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arpari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+      /**** Hide Scrollbar for Webkit Browsers ****/
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /**** Hide Scrollbar for Firefox ****/
+      .no-scrollbar {
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mobile menu -->
+    <div class="fixed w-full top-0 left-0 z-50 bg-white" id="mobile-menu">
+      <div class="p-4 h-full flex flex-col gap-10 relative">
+        <!-- Close Button -->
+        <button
+          id="menu-close"
+          class="absolute z-50 top-4 right-4 text-black focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Items -->
+        <a href="#" class="block text-black">Company</a>
+        <a href="#" class="block text-black">Solutions</a>
+        <a href="#" class="block text-black">Pricing</a>
+
+        <!-- Button for Booking Meeting -->
+        <a href="#" class="block text-white max-w-max">
+          <p class="bg-blue-600 px-5 py-2 rounded-md cursor-pointer">
+            Book a Demo
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div id="main-content" class="transition-all duration-900">
+      <nav
+        id="navbar"
+        class="w-full fixed top-0 z-10 transition-colors duration-300 ease-in-out bg-[#ffffff]  rounded-b-3xl"
+      >
+        <div
+          class="px-4 md:px-4 max-w-screen-xl mx-auto md:pt-6 md:pb-4 py-4 md:py-2 flex items-center text-md"
+        >
+          <!-- Left Section (Logo) -->
+          <div class="flex-1 flex justify-start items-center">
+            <a href="#" class="font-bold text-gray-800">
+              <img
+                src="./images/66d3843758a57dbf261e01bc_-logo-black.avif"
+                alt="Logo"
+                class="w-[150px] md:w-[110px]"
+              />
+            </a>
+          </div>
+
+          <!-- Centered Navigation Links -->
+          <div class="flex-1 flex justify-center items-center gap-6">
+            <ul class="hidden md:flex text-nowrap gap-10 text-sm">
+              <li><a href="#" class="hover:text-gray-800 ">Features </a></li>
+              <li><a href="#" class="hover:text-gray-800">Pricing</a></li>
+              <li><a href="#" class="hover:text-gray-800">Documentation</a></li>
+              <li><a href="#" class="hover:text-gray-800">Solutions</a></li>
+              <li><a href="#" class="hover:text-gray-800">Resources</a></li>
+
+
+            </ul>
+          </div>
+          <!-- ( Button ) -->
+          <div class="flex flex-1 justify-end items-center min-w-[150px] gap-4">
+            <a href=""><p class="text-sm px-4 py-2 border-2 border-[#f5f7fa] rounded-md hover:bg-[#f5f7fa] duration-300">CONTACT SALES</p></a>
+            <a
+              ><button
+                class="hidden md:block  hover:opacity-90 bg-black text-white font-family py-2 px-6 rounded-md transition-all duration-300 text-sm "
+              >
+                <p class="text-sm font-family text-nowrap ">LOG IN</p>
+              </button></a
+            >
+          </div>
+
+          <!-- Hamburger Menu -->
+          <button
+            class="block md:hidden mr-3 focus:outline-none"
+            id="menu-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+
+      <!-- hero section -->
+
+
+      <section id="hero" class="max-w-screen-xl mx-auto md:pt-20 pt-10 flex flex-col items-center mt-20 md:mt-20">
+            <h1 class="text-3xl md:text-7xl font-bold text-center">Supercharge your <br>
+                <span class="bg-gradient-to-r from-[#d7f5f5] via-[#4f7afc] to-[#e1bdc6] bg-clip-text text-transparent">Call Operations</span> with Voice AI</h1>
+
+                <p class="text-[#606673] text-sm md:text-lg text-center font-family md:w-[50%] mt-8">Discover the new way to build, test, deploy, and monitor <br>
+                production-ready AI voice agents at scale.</p>
+
+                <div class="flex gap-4 mt-8"><a href=""><p class="text-sm px-4 py-3 bg-black text-white rounded-md hover:opacity-90 duration-300">TRY FOR FREE</p></a>
+ 
+                <a href=""><p class="text-sm px-4 py-3 border-2 border-[#f5f7fa] rounded-md hover:bg-[#f5f7fa] duration-300">CONTACT SALES</p></a></div>
+                
+                
+                <div class="mt-12">
+                    <p class="text-[#606673] text-md md:text-xl text-center ">Trusted By</p>
+
+
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-6 gap-6 items-center justify-items-center">
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/pwc.png" 
+                             alt="PwC Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/justcall.png" 
+                             alt="JustCall Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/twillo.png" 
+                             alt="Twilio Logo">
+                             <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/pwc.png" 
+                             alt="PwC Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/justcall.png" 
+                             alt="JustCall Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/twillo.png" 
+                             alt="Twilio Logo">
+                             <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/pwc.png" 
+                             alt="PwC Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/justcall.png" 
+                             alt="JustCall Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/twillo.png" 
+                             alt="Twilio Logo">
+                             <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/pwc.png" 
+                             alt="PwC Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/justcall.png" 
+                             alt="JustCall Logo">
+                        
+                        <img class="w-24 md:w-28 lg:w-32 object-contain filter grayscale hover:grayscale-0 transition duration-300" 
+                             src="./images/twillo.png" 
+                             alt="Twilio Logo">
+                    </div>
+                    
+                    
+                </div>
+
+                
+                
+            
+      </section>
+
+      <!-- section 1 -->
+
+      <section id="section-1" class=" bg-[#f5f7fa] py-10 md:py-20 mt-20">
+        <div class="max-w-screen-xl mx-auto px-5">
+        <p class="inline bg-white border-[1px] px-3 py-1 rounded-3xl text-sm ">Use Cases</p> 
+
+        <h3 class="text-2xl md:text-5xl font-semibold mt-4">Try Our Live Demo</h3>
+
+        <div class=" flex flex-col md:flex-row mt-10 gap-6">
+            <!-- First Section -->
+            <div class="flex flex-col flex-1 md:flex-row w-3/4 rounded-lg overflow-hidden">
+                <!-- Left Side (Form) -->
+                <div class="bg-black text-white w-full md:w-1/2 p-10 flex flex-col gap-4">
+                    <h4 class="text-xl font-semibold">Receive a live call from our agent</h4>
+                    
+                    <label class="text-sm">Phone Number</label>
+                    <input type="text" placeholder="123-456-7890"
+                           class="p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-gray-400">
+                    
+                    <label class="text-sm">Name</label>
+                    <input type="text" placeholder="John"
+                           class="p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-gray-400">
+                    
+                    <label class="text-sm">Email Address</label>
+                    <input type="email" placeholder="john@company.com"
+                           class="p-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-gray-400">
+        
+                    <button class="mt-4 bg-white text-gray-800 py-2 px-4 rounded font-semibold hover:bg-gray-300 transition">
+                        Get A Call
+                    </button>
+                </div>
+        
+                <!-- Right Side (Image) -->
+                <div class="w-full md:w-1/2  flex-1" >
+                    <img src="./images/s1.avif" alt="Call Support" class="w-full h-[460px] object-cover rounded">
+                </div>
+            </div>
+        
+            <!-- Services Section (Buttons with Icons) -->
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 w-1/4 text-center">
+                <!-- Receptionist -->
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-4 rounded shadow-md">
+                    <i class="ri-phone-fill text-3xl text-black mb-2"></i>
+                    <p class="font-semibold text-black">Receptionist</p>
+                </div>
+            
+                <!-- Appointment Setter -->
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-4 rounded shadow-md">
+                    <i class="ri-calendar-check-fill text-3xl text-black mb-2"></i>
+                    <p class="font-semibold text-black">Appointment Setter</p>
+                </div>
+            
+                <!-- Lead Qualification -->
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-4 rounded shadow-md">
+                    <i class="ri-user-search-fill text-3xl text-black mb-2"></i>
+                    <p class="font-semibold text-black">Lead Qualification</p>
+                </div>
+            
+                <!-- Survey -->
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-4 rounded shadow-md">
+                    <i class="ri-survey-fill text-3xl text-black mb-2"></i>
+                    <p class="font-semibold text-black">Survey</p>
+                </div>
+            
+                <!-- Customer Service -->
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-4 rounded shadow-md">
+                    <i class="ri-customer-service-2-fill text-3xl text-black mb-2"></i>
+                    <p class="font-semibold text-black">Customer Service</p>
+                </div>
+            
+                <!-- Debt Collection -->
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-4 rounded shadow-md">
+                    <i class="ri-money-dollar-circle-fill text-3xl text-black mb-2"></i>
+                    <p class="font-semibold text-black">Debt Collection</p>
+                </div>
+            </div>
+        </div>
+        </div>
+       
+        
+        
+      </section>
+
+        <!-- section 2 -->
+
+        <section id="section-2" class="py-10 md:py-20 mt-20">
+            <div class="max-w-screen-xl mx-auto px-5">
+            <p class="inline bg-white border-[1px] px-3 py-1 rounded-3xl text-sm ">Value
+               </p> 
+    
+            <h3 class="text-2xl md:text-5xl font-semibold mt-4">How it Works</h3>
+    
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
+                <!-- Card 1 -->
+                <div class="flex flex-col items-start bg-gray-100 p-6 rounded-lg shadow-md">
+                    <span class="text-5xl font-bold text-gray-800">01</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-2">Build</h3>
+                    <p class="text-gray-600 mt-2">Utilize the voice AI API and our intuitive agent builder to create custom voice AI agents effortlessly.</p>
+                    <img src="./images/01.png" alt="Build Icon" class="mt-4 w-full h-auto">
+                </div>
+            
+                <!-- Card 2 -->
+                <div class="flex flex-col items-start bg-gray-100 p-6 rounded-lg shadow-md">
+                    <span class="text-5xl font-bold text-gray-800">02</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-2">Test</h3>
+                    <p class="text-gray-600 mt-2">Perform comprehensive agent testing with built-in test LLM features to ensure seamless handling of edge cases.</p>
+                    <img src="./images/01.png" alt="Test Icon" class="mt-4 w-full h-auto">
+                </div>
+            
+                <!-- Card 3 -->
+                <div class="flex flex-col items-start bg-gray-100 p-6 rounded-lg shadow-md">
+                    <span class="text-5xl font-bold text-gray-800">03</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-2">Deploy</h3>
+                    <p class="text-gray-600 mt-2">Easily deploy your agents to phone calls, web calls, SMS, and more.</p>
+                    <img src="./images/02.png" alt="Deploy Icon" class="mt-4 w-full h-auto">
+                </div>
+            
+                <!-- Card 4 -->
+                <div class="flex flex-col items-start bg-gray-100 p-6 rounded-lg shadow-md">
+                    <span class="text-5xl font-bold text-gray-800">04</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-2">Monitor</h3>
+                    <p class="text-gray-600 mt-2">Track success rates, latency, and user sentiment through the call history dashboard. Quickly identify failed calls.</p>
+                    <img src="./images/03.png" alt="Monitor Icon" class="mt-4 w-full h-auto">
+                </div>
+            </div>
+            
+            </div>
+           
+            
+            
+          </section>
+    
+    </div>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

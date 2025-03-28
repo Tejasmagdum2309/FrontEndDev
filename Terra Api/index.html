@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terra API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+      }
+
+      /**** Hide Scrollbar for Webkit Browsers ****/
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /**** Hide Scrollbar for Firefox ****/
+      .no-scrollbar {
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mobile menu -->
+    <div class="fixed w-full top-0 left-0 z-50 bg-white" id="mobile-menu">
+      <div class="p-4 h-full flex flex-col gap-10 relative">
+        <!-- Close Button -->
+        <button
+          id="menu-close"
+          class="absolute z-50 top-4 right-4 text-black focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Items -->
+        <a href="#" class="block text-black">Integrations
+
+          
+          </a>
+        <a href="#" class="block text-black">Products</a>
+        <a href="#" class="block text-black">Resources</a>
+        <a href="#" class="block text-black">Company</a>
+
+        <a href="#" class="block text-black">Pricing</a>
+
+
+        <!-- Button for Booking Meeting -->
+        <a href="#" class="block text-white max-w-max">
+          <p class="bg-blue-600 px-5 py-2 rounded-3xl cursor-pointer">
+            Get Started
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div id="main-content" class="transition-all duration-900">
+      <nav
+        id="navbar"
+        class="w-full fixed top-0 z-[9999] duration-300 ease-in-out bg-[#ffffff] text-[#4b5461]"
+      >
+        <div
+          class="px-4 md:px-4 max-w-screen-2xl mx-auto md:pt-4 md:pb-4 py-4 md:py-2 flex items-center justify-between"
+        >
+          <!-- Grouped Left & Middle Section -->
+          <div class="flex items-center gap-6">
+            <!-- Left Section (Logo) -->
+            <div class="justify-start">
+              <a href="#" class="font-bold text-gray-800">
+                <img
+                  src="./images/image.webp"
+                  alt="Logo"
+                  class="w-[150px] md:w-[110px]"
+                />
+              </a>
+            </div>
+
+            <!-- Centered Navigation Links -->
+            <div class="hidden md:flex items-center gap-10">
+              <ul class="flex text-nowrap gap-10">
+                <li><a href="#" class="block text-black">Integrations
+
+          
+                </a>
+              <li><a href="#" class="block text-black">Products</a></li> 
+            <li><a href="#" class="block text-black">Resources</a></li>  
+            <li><a href="#" class="block text-black">Company</a></li>  
+      
+             <li> <a href="#" class="block text-black">Pricing</a></li>
+               
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Section (Login & Button) -->
+          <div class="flex justify-end items-center min-w-[150px] gap-4">
+            <a href=""><span class="text-[#008aff]">login</span></a>
+            <a
+              ><button
+                class="hidden md:block border-2 border-black hover:opacity-90 hover:bg-[#0c4aef] bg-[#008aff] text-[#ffffff] hover:text-white font-family py-2 px-6 rounded-3xl transition-all duration-300 text-sm md:text-md"
+              >
+                <p class="text-lg font-family text-nowrap">Get Started</p>
+              </button></a
+            >
+          </div>
+
+          <!-- Hamburger Menu -->
+          <button
+            class="block md:hidden mr-3 focus:outline-none"
+            id="menu-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero section -->
+
+      <section
+        id="hero"
+        class="relative w-full bg-blue-200 h-[180vh] md:h-[130vh] rounded-b-3xl overflow-hidden"
+      >
+        <div
+          class="max-w-screen-2xl mx-auto pt-[18vh] md:pt-[18vh] px-4 md:px-4 flex items-center"
+        >
+          <div
+            class="absolute w-full h-full bg-gradient-to-bl from-[rgba(255,188,201,0.5)] to-transparent to-40% top-0 right-0"
+          ></div>
+
+          <div>
+            <svg
+              width="337"
+              height="77"
+              viewBox="0 0 337 77"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="absolute top-[100px] right-0 max-lg:w-[152px] grow-path"
+            >
+              <path
+                d="M707.356 0.749023H283.615C254.774 0.749023 227.116 12.2039 206.726 32.5992L195.613 43.7129C175.223 64.1028 147.565 75.5631 118.724 75.5631H0"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="absolute top-[100px] right-[210px] max-lg:top-[30px] max-lg:right-[65px] max-lg:w-[15px] grow-path"
+            >
+              <path
+                d="M11.5304 22.4007C17.3888 22.4007 22.1379 17.6515 22.1379 11.7931C22.1379 5.93471 17.3888 1.18555 11.5304 1.18555C5.67197 1.18555 0.922852 5.93471 0.922852 11.7931C0.922852 17.6515 5.67197 22.4007 11.5304 22.4007Z"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+            <svg
+              width="112"
+              height="96"
+              viewBox="0 0 112 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="absolute top-[190px] right-0 max-lg:hidden grow-path"
+            >
+              <path
+                d="M249.727 1H48.1783C22.1216 1 1 22.1216 1 48.1783C1 74.2351 22.1216 95.3567 48.1783 95.3567H249.727"
+                stroke="#008BFF"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+          </div>
+          <div class="w-full text-white text-center">
+            <h2
+              id="t1"
+              class="max-lg:text-[38px] md:text-[4.25em] max-md:text-[40px] overflow-visible bg-gradient-to-r from-[#000000] from-50% to-[#008BFF] text-transparent bg-clip-text"
+            >
+              Turn scattered blood reports <br />
+              into structured data
+            </h2>
+            <p
+              id="t1"
+              class="mt-10 text-[#1E293A] text-[20px] max-lg:text-[18px] font-light lg:px-20"
+            >
+              Get precise blood test data such as blood cell counts, Hba1c,
+              biochemical markers <br />
+              and lipid profiles into your app.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="flex">
+          <div
+            id="report1"
+            style="
+              position: absolute;
+              bottom: 0px;
+              z-index: 10;
+              left: 10%;
+              transform: none;
+            "
+          >
+            <img
+              alt="Blood report"
+              loading="lazy"
+              width="500"
+              height="700"
+              decoding="async"
+              data-nimg="1"
+              style="color: transparent"
+              src="./images/report1.svg"
+            />
+          </div>
+          <div id="report2" style="position: absolute; bottom: 30%; left: 30%">
+            <img
+              alt="Blood report"
+              loading="lazy"
+              width="250"
+              height="300"
+              decoding="async"
+              data-nimg="1"
+              style="color: transparent"
+              src="./images/report2.svg"
+            />
+          </div>
+          <div
+            id="report3"
+            style="position: absolute; bottom: 0%; z-index: 20; left: 30%"
+          >
+            <img
+              alt="Blood report"
+              loading="lazy"
+              width="380"
+              height="430"
+              decoding="async"
+              data-nimg="1"
+              style="color: transparent"
+              src="./images/report3.svg"
+            />
+          </div>
+          <div
+            id="report4"
+            style="position: absolute; bottom: 0%; left: 66%; transform: none"
+          >
+            <img
+              alt="Blood report"
+              loading="lazy"
+              width="200"
+              height="220"
+              decoding="async"
+              data-nimg="1"
+              style="color: transparent"
+              src="./images/report4.svg"
+            />
+          </div>
+          <div
+            id="report5"
+            style="
+              position: absolute;
+              bottom: 0%;
+              z-index: 10;
+              left: 70%;
+              transform: none;
+            "
+          >
+            <img
+              alt="Blood report"
+              loading="lazy"
+              width="320"
+              height="450"
+              decoding="async"
+              data-nimg="1"
+              style="color: transparent"
+              src="./images/report5.svg"
+            />
+          </div>
+        </div>
+        <div
+          id="report6"
+          style="position: absolute; bottom: 0%; opacity: 0; right: 0%"
+        >
+          <div
+            class="rounded-[40px] w-[500px] h-[700px] flex flex-col border border-[3px] border-black"
+          >
+            <div
+              class="flex gap-4 justify-center items-center bg-white py-6 border-b-[3px] border-black rounded-t-[40px]"
+            >
+              <div
+                class="w-[25px] h-[25px] rounded-full bg-[#BBDFFD] border-[3px] border-black"
+              ></div>
+              <div
+                class="w-[180px] h-[25px] rounded-full border-[3px] border-black"
+              ></div>
+            </div>
+            <div
+              class="overflow-hidden h-full bg-[#F0E9FF] px-12 py-8 flex flex-col gap-8 rounded-b-[40px]"
+            >
+              <div
+                class="flex flex-col gap-8"
+                style="transform: translateY(-875px)"
+              >
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #bbdffd; color: #000000"
+                >
+                  <p class="font-semibold text-[32px]">
+                    <!-- -->Vitamin D<!-- -->
+                  </p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->32<!-- --> </span
+                    ><span class="text-xl"> <!-- -->ng/mL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #008bff; color: #ffffff"
+                >
+                  <p class="font-semibold text-[32px]">
+                    <!-- -->Cortisol (AM)<!-- -->
+                  </p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->21<!-- --> </span
+                    ><span class="text-xl"> <!-- -->ug/dL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #ffec80; color: #000000"
+                >
+                  <p class="font-semibold text-[32px]">
+                    <!-- -->Glucose (Fasting)<!-- -->
+                  </p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->105<!-- --> </span
+                    ><span class="text-xl"> <!-- -->mg/dL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #ff3058; color: #ffffff"
+                >
+                  <p class="font-semibold text-[32px]"><!-- -->CRP<!-- --></p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->4<!-- --> </span
+                    ><span class="text-xl"> <!-- -->mg/dL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #bbdffd; color: #000000"
+                >
+                  <p class="font-semibold text-[32px]">
+                    <!-- -->Vitamin D<!-- -->
+                  </p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->32<!-- --> </span
+                    ><span class="text-xl"> <!-- -->ng/mL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #008bff; color: #ffffff"
+                >
+                  <p class="font-semibold text-[32px]">
+                    <!-- -->Cortisol (AM)<!-- -->
+                  </p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->21<!-- --> </span
+                    ><span class="text-xl"> <!-- -->ug/dL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #ffec80; color: #000000"
+                >
+                  <p class="font-semibold text-[32px]">
+                    <!-- -->Glucose (Fasting)<!-- -->
+                  </p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->105<!-- --> </span
+                    ><span class="text-xl"> <!-- -->mg/dL<!-- --> </span>
+                  </p>
+                </div>
+                <div
+                  class="p-5 rounded-3xl border-[3px] border-black flex flex-col w-full"
+                  style="background-color: #ff3058; color: #ffffff"
+                >
+                  <p class="font-semibold text-[32px]"><!-- -->CRP<!-- --></p>
+                  <p>
+                    <span class="font-semibold text-[32px]">
+                      <!-- -->4<!-- --> </span
+                    ><span class="text-xl"> <!-- -->mg/dL<!-- --> </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+
+      <!-- <section id="section-2" class=""> -->
+      <section class="">
+        <div class="relative pb-24 pt-[40px] lg:pt-[80px]">
+          <div
+            class="overflow-hidden security-gradient w-full rounded-t-[40px] h-full absolute top-0 left-0"
+          >
+            <div
+              class="absolute w-full h-full bg-gradient-to-tl from-[rgba(255,188,201,0.5)] to-transparent to-40% top-0 right-0"
+            ></div>
+            <svg
+              width="360"
+              height="95"
+              viewBox="0 0 360 95"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden lg:block absolute right-0 top-[220px] max-lg:-right-[290px] max-lg:top-[-40px] grow-path"
+            >
+              <path
+                d="M840.924 0.998917H526.834H377.175H281.905C260.223 0.998917 239.425 9.61079 224.09 24.9463L179.263 69.7792C163.928 85.1079 143.13 93.7266 121.449 93.7266H0.767883"
+                stroke="#008AFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+            <svg
+              width="448"
+              height="167"
+              viewBox="0 0 448 167"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden lg:block absolute right-0 top-[150px] max-lg:-right-[290px] max-lg:top-[-60px] grow-path"
+            >
+              <path
+                d="M959.424 -15.9993H893.834H862.455C821.061 -15.9993 780.652 -6.45685 744.175 11.421C717.806 24.3355 693.488 41.5997 672.333 62.7551L614.282 120.799C585.519 149.568 546.506 165.727 505.821 165.727H339.086H323.164C305.334 165.727 288.238 158.646 275.634 146.041C269.328 139.736 261.903 134.813 253.824 131.468C245.745 128.116 237.012 126.349 228.103 126.349H0"
+                stroke="#FF3058"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+          </div>
+          <div class="w-full">
+            <div
+              class="flex flex-col mb-8 lg:mb-24 lg:text-center lg:items-center gap-8 px-6 lg:px-0"
+            >
+              <h2 class="lg:px-0 text-[30px] lg:w-[600px] lg:text-[40px]">
+                Organise blood test data without the manual hassle
+              </h2>
+              <span
+                class="text-[#666] text-[16px] lg:w-[700px] leading-[150%] font-light"
+                >Streamline, standardise and make sense of your users’ blood
+                test data with Terra API’s blood biomarker API.</span
+              >
+              <div class="flex items-center gap-2">
+                <button
+                  class="hidden md:block border-2 border-black hover:opacity-90 hover:bg-[#0c4aef] bg-[#008aff] text-[#ffffff] hover:text-white font-family py-2 px-6 rounded-3xl transition-all duration-300 text-sm md:text-md"
+                >
+                  <p class="text-lg font-family text-nowrap">Get Started</p>
+                </button>
+              </div>
+            </div>
+            <div
+              class="flex flex-col lg:flex-row lg:justify-center gap-8 px-6 lg:px-0"
+            >
+              <div
+                class="lg:w-full lg:max-w-[600px] lg:h-full lg:transform lg:translate-x-20 lg:translate-y-20 lg:-rotate-[10deg]"
+              >
+                <div
+                  class="w-full h-[420px] lg:h-[550px] border-white border-2 rounded-3xl flex flex-col gap-4"
+                  style="background-color: #bbdffd"
+                >
+                  <div class="m-6">
+                    <p class="mb-4 text-base text-[#1E293A] font-semibold">
+                      <!-- -->Streamline the way you get blood report data from
+                      all your users<!-- -->
+                    </p>
+                    <p class="font-light text-[#666666]">
+                      <!-- -->Unify blood biomarker data from different labs and
+                      formats, enabling consistent and actionable insights.<!-- -->
+                    </p>
+                  </div>
+                  <div class="w-full h-full relative">
+                    <img
+                      alt="Organize card"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      class="object-fill"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: transparent;
+                      "
+                      src="./images/streamline.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="z-4 lg:max-w-[600px]">
+                <div
+                  class="w-full h-[420px] lg:h-[550px] border-white border-2 rounded-3xl flex flex-col gap-4"
+                  style="background-color: #ffec80"
+                >
+                  <div class="m-6">
+                    <p class="mb-4 text-base text-[#1E293A] font-semibold">
+                      <!-- -->Standardise blood biomarker data across all
+                      formats<!-- -->
+                    </p>
+                    <p class="font-light text-[#666666]">
+                      <!-- -->Transform complex blood reports into standardized
+                      data, no matter the source. Deliver consistent results for
+                      biomarkers like insulin, platelets, and triglycerides at
+                      scale.<!-- -->
+                    </p>
+                  </div>
+                  <div class="w-full h-full relative">
+                    <img
+                      alt="Organize card"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      class="object-fill"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: transparent;
+                      "
+                      src="./images/standardise.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lg:w-full lg:max-w-[600px] lg:h-full lg:transform lg:-translate-x-20 lg:translate-y-20 lg:rotate-[10deg]"
+              >
+                <div
+                  class="w-full h-[420px] lg:h-[550px] border-white border-2 rounded-3xl flex flex-col gap-4"
+                  style="background-color: #f1e9fe"
+                >
+                  <div class="m-6">
+                    <p class="mb-4 text-base text-[#1E293A] font-semibold">
+                      <!-- -->Organise your blood, wearable and sensor data all
+                      in one place<!-- -->
+                    </p>
+                    <p class="font-light text-[#666666]">
+                      <!-- -->Unify health data from blood tests, wearables, and
+                      sensors into a single platform. Gain a 360-degree view of
+                      user health with integrations across all leading devices
+                      and systems.<!-- -->
+                    </p>
+                  </div>
+                  <div class="w-full h-full relative">
+                    <img
+                      alt="Organize card"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      class="object-fill"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: transparent;
+                      "
+                      src="./images/organise.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="w-full h-[80px] lg:h-[200px] transform -translate-y-[100%] z-10"
+      >
+        <svg
+          viewBox="0 0 100 50"
+          preserveAspectRatio="none"
+          class="w-full h-[200%] transform -translate-y-[100%] lg:-translate-y-[50%]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M -2 50 Q 50 0 102 50"
+            fill="#BBDFFD"
+            stroke="white"
+            stroke-width="0.3px"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- section 3 -->
+
+      <section class="">
+        <div
+          class="relative transform -translate-y-[160px] lg:-translate-y-[200px] bg-[#BBDFFD]"
+        >
+          <div class="w-full transform lg:-translate-y-[100px]">
+            <div
+              class="flex flex-col mb-8 lg:mb-24 lg:text-center lg:items-center gap-8 px-6 lg:px-0"
+            >
+              <h2
+                class="text-[30px] lg:w-[700px] lg:text-[40px] text-[#1E293A] pt-6 lg:pt-0"
+              >
+                Simplify blood report management for all use cases
+              </h2>
+              <span
+                class="text-[#666] text-[16px] lg:w-[700px] max-lg:text-[14px] leading-[150%] font-light"
+                >No more time wasted on manual data management. Get organised,
+                standardised blood report data delivered seamlessly to your app
+                for all use cases.</span
+              ><a
+                target=""
+                class="hidden lg:block"
+                href=""
+                ><button
+                  class="group inline-flex h-12 px-6 flex-col justify-center items-center gap-2 flex-shrink-0 rounded-full border-2 border-neutral-dark-100 shadow-button transition-all duration-200 bg-main-blue disabled:transform-none disabled:shadow-none disabled:border-2 disabled:border-black disabled:border-opacity-[24%] disabled:rounded-full disabled:bg-black disabled:bg-opacity-[24%] disabled:text-opacity-[30] active:brightness-[80%] hover:shadow-none hover:transform hover:-translate-x-[4px] hover:translate-y-[4px]"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="font-medium text-xs text-white"
+                      >Get started</span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="24"
+                      fill="none"
+                      stroke="white"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="6 0 13 24"
+                    >
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </div></button
+              ></a>
+            </div>
+            <div class="flex flex-col lg:flex-row lg:justify-center gap-8 mx-6">
+              <div class="w-full max-w-[600px]">
+                <div
+                  class="w-full h-[420px] lg:h-[550px] border-white border-2 rounded-3xl flex flex-col gap-4"
+                  style="background-color: #ffffff8c"
+                >
+                  <div class="m-6">
+                    <p class="mb-4 text-base text-[#1E293A] font-semibold">
+                      <!-- -->Supercharge Preventive Health Measures<!-- -->
+                    </p>
+                    <p class="font-light text-[#666666]">
+                      <!-- -->Empower your users with personalized health
+                      insights by integrating biomarker data such as thyroid
+                      markers, liver enzymes, and iron levels<!-- -->
+                    </p>
+                  </div>
+                  <div class="w-full h-full relative">
+                    <img
+                      alt="Organize card"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      class="object-fill"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: transparent;
+                      "
+                      src="./images/supercharge.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full max-w-[600px]">
+                <div
+                  class="w-full h-[420px] lg:h-[550px] border-white border-2 rounded-3xl flex flex-col gap-4"
+                  style="background-color: #ffffff8c"
+                >
+                  <div class="m-6">
+                    <p class="mb-4 text-base text-[#1E293A] font-semibold">
+                      <!-- -->Optimise nutrition with key biomarkers<!-- -->
+                    </p>
+                    <p class="font-light text-[#666666]">
+                      <!-- -->Turn complex blood report data into actionable
+                      recommendations for better nutrition. Help your users
+                      discover how their lifestyle choices shape their health.<!-- -->
+                    </p>
+                  </div>
+                  <div class="w-full h-full relative">
+                    <img
+                      alt="Organize card"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      class="object-fill"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: transparent;
+                      "
+                      src="./images/optimise.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full max-w-[600px]">
+                <div
+                  class="w-full h-[420px] lg:h-[550px] border-white border-2 rounded-3xl flex flex-col gap-4"
+                  style="background-color: #ffffff8c"
+                >
+                  <div class="m-6">
+                    <p class="mb-4 text-base text-[#1E293A] font-semibold">
+                      <!-- -->Enable Early Disease Risk Detection<!-- -->
+                    </p>
+                    <p class="font-light text-[#666666]">
+                      <!-- -->Spot early warning signs before they become
+                      critical. Guide your users through health changes with
+                      blood biomarker insights for better outcomes.<!-- -->
+                    </p>
+                  </div>
+                  <div class="w-full h-full relative">
+                    <img
+                      alt="Organize card"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      class="object-fill"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: transparent;
+                      "
+                      src="./images/enable.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+
+      <footer>
+        <div class="max-w-screen-2xl mx-auto">
+          <div
+            class="flex flex-col py-[100px] justify-center items-center bg-[#F1EAFF] rounded-[40px] gap-10 relative mb-6 overflow-hidden max-lg:pb-[80px] max-lg:gap-5"
+          >
+            <h2
+              class="text-center text-[63px] not-italic font-semibold leading-[70px] w-[60%] z-10 max-lg:text-[28px] max-lg:leading-[150%] max-lg:w-full"
+            >
+              Connect your app to<br />
+              your users' wearables
+            </h2>
+            <a
+              target=""
+              class="z-10"
+              href=""
+              ><button
+                class="group inline-flex h-12 px-6 flex-col justify-center items-center gap-2 flex-shrink-0 rounded-full border-2 border-neutral-dark-100 shadow-button transition-all duration-200 bg-main-blue disabled:transform-none disabled:shadow-none disabled:border-2 disabled:border-black disabled:border-opacity-[24%] disabled:rounded-full disabled:bg-black disabled:bg-opacity-[24%] disabled:text-opacity-[30] active:brightness-[80%] hover:shadow-none hover:transform hover:-translate-x-[4px] hover:translate-y-[4px]"
+              >
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-[16px] text-white"
+                    >Get started</span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="24"
+                    fill="none"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="6 0 13 24"
+                  >
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </div></button
+            ></a>
+            <div
+              class="absolute w-full h-[200%] bg-gradient-to-bl from-[rgba(255,188,201,0.9)] to-transparent to-40%"
+            ></div>
+            <div
+              class="absolute w-full h-full bg-gradient-to-tr from-[#BCE0FEFF] to-transparent to-50%"
+            ></div>
+            <svg
+              class="absolute top-0 left-1/2 translate-x-[-50%] max-lg:hidden"
+              width="1215"
+              height="434"
+              viewBox="0 0 1215 434"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1195.32 131.408H1118.67C1080.64 131.408 1044.16 116.3 1017.26 89.4018L973.167 45.31C946.269 18.4115 909.792 3.3034 871.752 3.3034H647.689C568.479 3.3034 504.267 -60.9087 504.267 -140.119V-187"
+                stroke="#FF3058"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M837.646 32.749H413.905C385.064 32.749 357.406 44.2039 337.016 64.5992L325.903 75.7129C305.513 96.1028 277.855 107.563 249.014 107.563H130.29"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M1183.89 400.058H982.345C956.288 400.058 935.166 421.179 935.166 447.236C935.166 473.293 956.288 494.414 982.345 494.414H1183.89"
+                stroke="#008BFF"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M0 480.802H35.5584C57.8849 480.802 75.986 462.701 75.986 440.375C75.986 418.048 94.0871 399.947 116.414 399.947H218.016C245.14 399.947 271.148 389.175 290.327 369.995L318.849 341.474"
+                stroke="#FF3058"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M260.865 38.46C277.875 38.46 291.665 24.6707 291.665 7.66067C291.665 -9.34934 277.875 -23.1387 260.865 -23.1387C243.855 -23.1387 230.066 -9.34934 230.066 7.66067C230.066 24.6707 243.855 38.46 260.865 38.46Z"
+                stroke="#008BFF"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M234.027 38.4541C239.886 38.4541 244.635 33.705 244.635 27.8466C244.635 21.9882 239.886 17.239 234.027 17.239C228.169 17.239 223.42 21.9882 223.42 27.8466C223.42 33.705 228.169 38.4541 234.027 38.4541Z"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M1149.53 54.4007C1155.39 54.4007 1160.14 49.6515 1160.14 43.7931C1160.14 37.9347 1155.39 33.1855 1149.53 33.1855C1143.67 33.1855 1138.92 37.9347 1138.92 43.7931C1138.92 49.6515 1143.67 54.4007 1149.53 54.4007Z"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M1034.3 -74.0527V-36.4366C1034.3 -20.7894 1040.52 -5.78581 1051.58 5.2784L1106.62 60.3189C1117.68 71.3831 1132.69 77.6002 1148.34 77.6002H1188.53"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path></svg
+            ><svg
+              class="absolute top-0 left-0 h-full lg:hidden"
+              width="356"
+              height="316"
+              viewBox="0 0 356 316"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M485 131H455.165C440.357 131 426.158 125.116 415.688 114.641L398.524 97.4701C388.054 86.9948 373.855 81.1112 359.047 81.1112H271.829C240.995 81.1112 216 56.1046 216 25.2573V7"
+                stroke="#FF3058"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M259 55H57.1203C43.38 55 30.2032 60.512 20.489 70.3261L15.1942 75.6739C5.48001 85.4854 -7.69677 91 -21.4371 91H-78"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M444 280H335.417C321.379 280 310 291.416 310 305.5C310 319.584 321.379 331 335.417 331H444"
+                stroke="#008BFF"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M-36 341H-9.45791C7.20739 341 20.7187 327.489 20.7187 310.823C20.7187 294.158 34.23 280.647 50.8953 280.647H126.735C146.982 280.647 166.394 272.606 180.71 258.29L202 237"
+                stroke="#FF3058"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M54.5 30C65.8218 30 75 20.8218 75 9.5C75 -1.82184 65.8218 -11 54.5 -11C43.1782 -11 34 -1.82184 34 9.5C34 20.8218 43.1782 30 54.5 30Z"
+                stroke="#008BFF"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M37 30C40.866 30 44 26.866 44 23C44 19.134 40.866 16 37 16C33.134 16 30 19.134 30 23C30 26.866 33.134 30 37 30Z"
+                stroke="black"
+                stroke-miterlimit="10"
+              ></path></svg
+            ><svg
+              class="absolute top-[25px] left-[25px] max-lg:-top-[84px] max-lg:-left-[20px]"
+              width="122"
+              height="123"
+              viewBox="0 0 122 123"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M55.5483 31.3184V22.1831"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M55.5483 9.42676V0.291458"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M88.955 15.7402H69.691"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M42.2298 15.7402H22.9584"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M76.5122 5.80322L69.6984 9.0332"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M41.6118 22.347L34.8054 25.5735"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M76.8727 25.8486L70.0589 22.6187"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M41.2364 8.9563L34.4227 5.72632"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                d="M121.328 122.11H0.6521"
+                stroke="white"
+                stroke-width="0.954308"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="p-22 relative footerbackground mb-[48px] border-[2px] border-white overflow-hidden rounded-[24px] pt-[93px] pb-[124px] px-[80px] w-full box-border max-lg:px-4 max-lg:pt-8"
+        >
+          <div
+            class="flex justify-between max-lg:grid max-lg:grid-cols-2 lg:gap-4 max-lg:gap-8"
+          >
+            <div
+              class="flex flex-col justify-between lg:w-[27%] max-lg:col-span-2 lg:gap-4 max-lg:gap-8"
+            >
+              <img
+                src="/images/FinalSection/terra.png"
+                alt=""
+                class="w-[148px] h-auto"
+              />
+              <div class="flex gap-[13px]">
+                <a href=""
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="none"
+                  >
+                    <path
+                      fill="#231F20"
+                      d="M30 28.125C30 29.16 29.16 30 28.125 30H1.875A1.876 1.876 0 0 1 0 28.125V1.875C0 .84.84 0 1.875 0h26.25C29.16 0 30 .84 30 1.875v26.25Z"
+                    ></path>
+                    <path
+                      fill="#fff"
+                      d="M10.313 10.313h-3.75v13.124h3.75V10.313ZM19.218 10.313c-2.617 0-3.067.954-3.28 1.874v-1.874h-3.75v13.124h3.75v-7.5c0-1.215.659-1.874 1.874-1.874 1.187 0 1.875.644 1.875 1.874v7.5h3.75v-6.562c0-3.75-.488-6.563-4.22-6.563ZM8.438 9.375a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75Z"
+                    ></path></svg></a
+                ><a href=""
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="none"
+                    viewBox="0 0 135 162"
+                  >
+                    <path
+                      fill="#231f20"
+                      d="m119.933 16.473 8.71 3.474L79.038 72.74l-8.655-3.328 49.55-52.939ZM54.1 87.07l8.897 3.273-53.582 57.058-8.845-3.124L54.1 87.07Z"
+                    ></path>
+                    <path
+                      stroke="#231f20"
+                      stroke-width="13"
+                      d="M96.886 136.374 14.636 25.963l23.5.117 82.199 110.294h-23.45Z"
+                    ></path></svg></a
+                ><a href=""
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="none"
+                  >
+                    <g clip-path="url(#github_svg__a)">
+                      <path
+                        fill="#231F20"
+                        fill-rule="evenodd"
+                        d="M15 .125C6.786.125.125 6.952.125 15.379c0 6.74 4.263 12.45 10.173 14.47.744.139 1.017-.333 1.017-.738 0-.365-.014-1.321-.02-2.596-4.138.923-5.014-2.046-5.014-2.046-.677-1.76-1.654-2.23-1.654-2.23-1.348-.95.1-.93.1-.93 1.494.106 2.278 1.573 2.278 1.573 1.328 2.331 3.48 1.66 4.33 1.269.132-.983.517-1.66.942-2.039-3.3-.385-6.773-1.693-6.773-7.537 0-1.667.578-3.028 1.527-4.09-.152-.386-.664-1.94.146-4.038 0 0 1.249-.412 4.091 1.56a13.934 13.934 0 0 1 3.725-.51c1.262.006 2.537.172 3.726.51 2.842-1.972 4.084-1.56 4.084-1.56.81 2.098.299 3.652.146 4.037.95 1.07 1.527 2.43 1.527 4.091 0 5.857-3.48 7.145-6.793 7.524.531.471 1.01 1.401 1.01 2.822 0 2.039-.02 3.686-.02 4.184 0 .405.265.883 1.022.73 5.923-2.012 10.18-7.723 10.18-14.457C29.875 6.953 23.215.126 15 .126Z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="github_svg__a">
+                        <path fill="#fff" d="M0 0h30v30H0z"></path>
+                      </clipPath>
+                    </defs></svg
+                ></a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <span
+                class="text-xl not-italic font-semibold text-[#0A0A0A] leading-[130%] max-lg:text-[16px]"
+                >Products</span
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%] z-50"
+                >Integrations<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                >Authentication<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                >Mobile Development<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                >Documentation<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >GraphAPI<!-- -->
+              </a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <span
+                class="text-xl not-italic font-semibold text-[#0A0A0A] leading-[130%] max-lg:text-[16px]"
+                >Documentation</span
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >API<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >SDK<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Quickstart<!-- -->
+              </a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <span
+                class="text-xl not-italic font-semibold text-[#0A0A0A] leading-[130%] max-lg:text-[16px]"
+                >Community</span
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Community<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Podcast<!-- --> </a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Github<!-- -->
+              </a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <span
+                class="text-xl not-italic font-semibold text-[#0A0A0A] leading-[130%] max-lg:text-[16px]"
+                >Company</span
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >About</a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Careers</a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Customers</a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Cookies Policy</a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >GDPR</a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Privacy Policy</a
+              ><a
+                class="text-base not-italic font-normal text-[#666] leading-[150%]"
+                href=""
+                >Terms of Purchase</a
+              >
+            </div>
+          </div>
+          <svg
+            class="absolute top-[29px] left-[235px] -z-10 max-lg:left-[170px] opacity-60 max-md:hidden"
+            width="965"
+            height="124"
+            viewBox="0 0 965 124"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M964.424 40.3772H666.321C657.412 40.3772 648.679 38.6103 640.6 35.2587C632.521 31.9137 625.096 26.9907 618.79 20.6852C606.186 8.08102 589.09 1 571.26 1H555.338H188.603C147.918 1 108.905 17.1582 80.1422 45.9274L22.0914 103.972C15.3483 110.715 8.28383 117.062 0.934082 123"
+              stroke="#008BFF"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+            ></path></svg
+          ><svg
+            class="absolute top-[58px] left-[60px] -z-10 max-lg:h-[39px] max-lg:top-[36px] max-lg:left-[150px] opacity-40 max-md:hidden"
+            width="450"
+            height="96"
+            viewBox="0 0 502 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.00012207 94.3058H125.249H220.52C242.201 94.3058 262.999 85.6939 278.334 70.3584L323.161 25.5255C338.496 10.1967 359.294 1.57812 380.975 1.57812H501.656"
+              stroke="#FF3058"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+            ></path></svg
+          ><svg
+            class="absolute top-[162px] left-[60px] -z-10 max-lg:hidden opacity-30"
+            width="186"
+            height="3"
+            viewBox="0 0 186 3"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 1.30566H185.59"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+            ></path></svg
+          ><svg
+            class="absolute top-[172px] left-[60px] -z-10 max-lg:hidden opacity-30"
+            width="136"
+            height="3"
+            viewBox="0 0 136 3"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 1.30566H135.59"
+              stroke="#008BFF"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+            ></path></svg
+          ><svg
+            class="absolute bottom-[28px] right-[68px] -z-10 opacity-10 max-lg:-right-[130px] max-lg:bottom-[64px] max-md:hidden"
+            width="813"
+            height="80"
+            viewBox="0 0 813 95"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 93.7276H65.5905H215.249H310.52C332.201 93.7276 352.999 85.1158 368.334 69.7803L413.161 24.9473C428.496 9.61862 449.294 1 470.975 1H812.656"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+            ></path></svg
+          ><span
+            class="text-sm not-italic font-normal text-[#666] leading-[150%] absolute bottom-[40px] max-lg:whitespace-nowrap max-lg:left-[50%] max-lg:-translate-x-[50%] lg:left-[62px]"
+            >© Terra API. 2025 — All rights reserved.</span
+          >
+        </div>
+      </footer>
+    </div>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsapscript.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
